@@ -26,7 +26,7 @@ const HeroSection = () => {
       <div className="w-full md:w-1/2 flex justify-center ">
         <Image
           src={"/hero-image.png"}
-          alt="Hero Image"
+          alt="Total Touch Cleaning and Laundry Services"
           loading='lazy'
           width={1000 }
           height={300}
