@@ -1,26 +1,34 @@
+import { FaHome } from "react-icons/fa";
+import { RiHomeOfficeFill } from "react-icons/ri";
+import { MdLocalLaundryService } from "react-icons/md";
+import { LuConstruction } from "react-icons/lu";
+
+
+
+
 export const home = [
   {
+    icon: <FaHome />,
     title: "HOME CLEANING",
     description:
-      "We provide comprehensive home cleaning services to keep your living space spotless and comfortable.",
-    img: "/home-cleaning.jpg",
+      "Professional home cleaning services to keep your space spotless.",
   },
   {
+    icon: <RiHomeOfficeFill />,
     title: "OFFICE CLEANING",
     description:
-      "Our office cleaning services ensure a clean and productive work environment for your team.",
-    img: "/office-cleaning.jpg",
+      "Reliable office cleaning services for a productive work environment.",
   },
   {
+    icon: <MdLocalLaundryService />,
     title: "LAUNDRY SERVICES",
     description:
-      "We offer professional laundry services to keep your clothes fresh and well-maintained.",
-    img: "/laundry-services.jpg",
+      "Convenient laundry services to take care of your clothes with care.",
   },
   {
-    title: "FRESH LAUNDRY",
+    icon: <LuConstruction />,
+    title: "POST-CONSTRUCTION CLEANING",
     description:
-      "Experience the joy of fresh laundry with our expert cleaning and folding services.",
-    img: "/fresh-laundry.jpg",
+      "Thorough post-construction cleaning to make your new space shine.",
   },
 ];
