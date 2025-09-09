@@ -15,7 +15,7 @@ const Notfound = () => {
         />
       </div>
       <div className="mb-0">
-        <h1 className="text-9xl text-center text-blue-600 font-bold">404</h1>
+        <h1 className="text-9xl text-center text-[#0A58A2] font-bold">404</h1>
       </div>
       <div className="text-center space-y-2.5">
         <h3 className="text-center text-5xl font-bold text-gray-600 mt-10">
@@ -27,13 +27,12 @@ const Notfound = () => {
       </div>
       <div className="flex justify-center gap-6 mt-10">
         <Link href={"/"}>
-          
-          <button className="bg-blue-100 text-blue-400 font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:text-white transition">
+          <button className="bg-blue-100 text-[#0A58A2] font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:text-white transition">
             Go back
           </button>
         </Link>
 
-        <button className="bg-blue-600 text-white px-6 py-3 font-semibold rounded-full  hover:bg-blue-700 transition">
+        <button className="bg-[#0A58A2] text-white px-6 py-3 font-semibold rounded-full  hover:bg-blue-900 transition">
           Go home
         </button>
       </div>
