@@ -13,7 +13,7 @@ const BookService = () => {
         </h3>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 px-6">
         {services.map((book) => (
           <BookServiceCard key={book.id} book={book} />
         ))}

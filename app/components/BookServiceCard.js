@@ -3,7 +3,7 @@ import React from 'react'
 
 export const BookServiceCard = ({book}) => {
   return (
-    <div className="relative w-full  border-gray-300 rounded-lg p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300">
+    <div className="relative w-full  border-gray-300 rounded-lg flex flex-col justify-between m-2">
       <div className="w-full  overflow-hidden rounded-lg">
         <img
           src={book.img}
