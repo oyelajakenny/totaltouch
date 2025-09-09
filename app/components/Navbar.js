@@ -7,13 +7,21 @@ const Navbar = () => {
   return (
     <div className="">
       <div className="container mx-auto hidden  md:flex justify-between items-center p-4 ">
-        <div className='flex items-center space-x-7'>
+        <div className="flex items-center space-x-7">
           <Image src={"/Logo.png"} alt="Logo" width={100} height={50} />
-          <nav className="flex space-x-6 text-lg font-semibold">
-            <Link href="/">Home</Link>
-            <Link href="/about-us">About Us</Link>
-            <Link href="/service">Our Services</Link>
-            <Link href="/contact-us">Contact Us</Link>
+          <nav className="flex space-x-6 text-lg font-regular text-gray-600 ">
+            <Link href="/" className="hover:text-blue-600">
+              Home
+            </Link>
+            <Link href="/about-us" className="hover:text-blue-600">
+              About Us
+            </Link>
+            <Link href="/service" className="hover:text-blue-600">
+              Our Services
+            </Link>
+            <Link href="/contact-us" className="hover:text-blue-600">
+              Contact Us
+            </Link>
           </nav>
         </div>
 
