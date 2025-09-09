@@ -4,10 +4,10 @@ import ServiceCard from "./ServiceCard";
 
 const Service = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto my-40">
       <div className="my-16 space-y-4">
         
-        <h2 className="text-3xl font-bold text-center">Our Services</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-600">Our Services</h2>
         <h1 className="text-5xl text-center font-semibold ">
           Your Favorite Cleaning & <br/> Laundry Partner
         </h1>
