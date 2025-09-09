@@ -7,7 +7,7 @@ const Notfound = () => {
     <div className="min-h-screen flex flex-col justify-center items-center  p-6">
       <div>
         <Image
-          src="/cleaner.png"
+          src="/images/cleaner.png"
           alt="notfound"
           width={300}
           height={300}
@@ -27,7 +27,7 @@ const Notfound = () => {
       </div>
       <div className="flex justify-center gap-6 mt-10">
         <Link href={"/"}>
-          <button className="bg-blue-100 text-[#0A58A2] font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:text-white transition">
+          <button className="bg-blue-100 text-[#0A58A2] font-semibold px-6 py-3 rounded-full hover:bg-[#0A58A2] hover:text-white transition">
             Go back
           </button>
         </Link>
