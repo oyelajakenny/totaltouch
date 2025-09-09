@@ -3,9 +3,6 @@ import { RiHomeOfficeFill } from "react-icons/ri";
 import { MdLocalLaundryService } from "react-icons/md";
 import { LuConstruction } from "react-icons/lu";
 
-
-
-
 export const home = [
   {
     icon: <FaHome />,
@@ -32,3 +29,32 @@ export const home = [
       "Thorough post-construction cleaning to make your new space shine.",
   },
 ];
+
+export const services = [
+  {
+    id: 1,
+    img: "images/home-cleaning.png",
+    title: "Home Cleaning",
+    url: "/home-cleaning",
+  },
+  {
+    id: 2,
+    img: "images/office-cleaning.png",
+    title: "Office Cleaning",
+    url: "/office-cleaning",
+  },
+  {
+    id: 3,
+    img: "images/laundry-service.png",
+    title: "Laundry Services",
+    url: "/laundry-services",
+  },
+  {
+    id: 4,
+    img: "images/post-construction.png",
+    title: "Post-Construction Cleaning",
+    url: "/post-construction-cleaning",
+  },
+];
+
+

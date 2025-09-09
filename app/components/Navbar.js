@@ -6,7 +6,7 @@ const Navbar = () => {
   
   return (
     <div className="">
-      <div className="container mx-auto hidden  md:flex justify-between items-center p-4 ">
+      <div className="container mx-auto hidden md:hidden  lg:flex justify-between items-center p-4 ">
         <div className="flex items-center space-x-7">
           <Image src={"/Logo.png"} alt="Logo" width={100} height={50} />
           <nav className="flex space-x-6 text-lg font-regular text-gray-600 ">
@@ -26,10 +26,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex space-x-4">
-          <button className="bg-white py-2 px-6 font-semibold text-blue-600 rounded-lg shadow-md cursor-pointer hover:bg-gray-100">
+          <button className="bg-white py-2 px-6 font-semibold text-[#0A58A2] rounded-lg shadow-md cursor-pointer hover:bg-gray-100">
             GET QUOTE
           </button>
-          <button className="bg-blue-600 py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700">
+          <button className="bg-[#0A58A2] py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700">
             BOOK CLEANING
           </button>
         </div>

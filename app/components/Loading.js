@@ -15,7 +15,7 @@ const Loading = () => {
           className="flex items-center space-x-2 text-green-800"
         >
           <Loader2 />
-          <span className="font-semibold tracking-wide">UpSkill Pro</span>
+          <span className="font-semibold tracking-wide">Total Touch is Loading....</span>
         </motion.div>
       </div>
     </div>
