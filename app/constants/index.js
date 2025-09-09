@@ -2,6 +2,7 @@ import { FaHome } from "react-icons/fa";
 import { RiHomeOfficeFill } from "react-icons/ri";
 import { MdLocalLaundryService } from "react-icons/md";
 import { LuConstruction } from "react-icons/lu";
+import path from "path";
 
 export const home = [
   {
@@ -55,6 +56,95 @@ export const services = [
     title: "Post-Construction Cleaning",
     url: "/post-construction-cleaning",
   },
+];
+
+export const about =[
+  {
+    name : "About Us",
+    path : "/about"
+  },
+  {
+    name: "Career",
+    path: "/career"
+  },
+  {
+    name: "Terms Of Service",
+    path: "/terms"
+  },
+];
+
+export const company = [
+  {
+    name: "Why Us",
+    path: "/about",
+  },
+  {
+    name: "Partner With Us",
+    path: "/career",
+  },
+  {
+    name: "Privacy Policy",
+    path: "/terms",
+  },
+  {
+    name: "FAQ",
+    path: "/terms",
+  },
+  {
+    name: "Blog",
+    path: "/terms",
+  },
+];
+
+export const service = [
+  {
+    name: "Home Cleaning",
+    path: "/home-cleaning",
+  },
+  {
+    name: "Office Cleaning",
+    path: "/office-cleaning",
+  },
+  {
+    name: "Deep Cleaning",
+    path: "/deep-cleaning",
+  },
+  {
+    name: "Laundry Services",
+    path: "/laundry-services",
+  },
+  {
+    name: "Dry Cleaning",
+    path: "/dry-cleaning",
+  },
+  {
+    name: "Post-Construction Cleaning",
+    path: "/post-construction-cleaning",
+  },
+];
+
+export const support = [
+  {
+    name: "Contact Us",
+    path: "/contact",
+  },
+  {
+    name: "Support",
+    path: "/support",
+  },
+  {
+    name: "Feedback",
+    path: "/feedback",
+  },
+  {
+    name: "Refund Policy",
+    path: "/refund-policy",
+  },
+  {
+    name: "Terms of Service",
+    path: "/terms-of-service",
+  },
+  
 ];
 
 
