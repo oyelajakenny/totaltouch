@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="container mx-auto hidden md:hidden  lg:flex justify-between items-center p-4 ">
         <div className="flex items-center space-x-7">
           <Image src={"/Logo.png"} alt="Logo" width={100} height={50} />
-          <nav className="flex space-x-6 text-lg font-regular text-gray-600 ">
+          <nav className="flex space-x-7 text-lg font-semibold text-gray-600 ">
             <Link href="/" className="hover:text-blue-600">
               Home
             </Link>

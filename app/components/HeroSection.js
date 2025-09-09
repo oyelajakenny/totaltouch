@@ -11,7 +11,7 @@ const HeroSection = () => {
           <span className="text-[#0A58A2]">Offices</span> Cleaning and Fresh{" "}
           <span className="text-[#0A58A2]">Laundry</span>
         </h1>
-        <p className="text-base sm:text-lg md:text-lg text-gray-700">
+        <p className="text-base sm:text-lg md:text-lg md:text-center lg:text-left text-gray-700">
           Enjoy the Comfort of a Fresh, Clean Home, Office and Wardrobe with Our
           Expert Services.
         </p>
