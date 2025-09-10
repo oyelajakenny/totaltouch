@@ -50,8 +50,8 @@ const Footer = () => {
             <p className="text-white text-center text-xl mb-4 font-semibold">
               Subscribe to our newsletter
             </p>
-            <form onSubmit={handleSubmit}>
-              <div className="flex justify-center items-center gap-3">
+            <form onSubmit={handleSubmit} className="">
+              <div className="flex flex-col lg:flex-row justify-center items-center gap-3 px-5">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -62,12 +62,12 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className="w-fit bg-blue-50 text-[#0A58A2] px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+                  className="w-full lg:w-fit bg-blue-50 text-[#0A58A2] px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
                 >
                   Subscribe
                 </button>
               </div>
-              {error && <p className="text-red-500 text-sm mt-3">{error}</p>}
+              {error && <p className="text-red-500 text-sm text-center mt-3">{error}</p>}
 
               <p className="text-center text-white text-sm mt-2">
                 We respect your privacy, we won&apos;t spam you.
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className=" border-1 border-blue-200" />
+        <hr className=" border-1 border-blue-200 mx-3" />
 
         {/* Middle Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 px-5 justify-center gap-8 lg:px-32  pt-20 pb-10">
@@ -226,7 +226,7 @@ const Footer = () => {
           />
         </div> 
       </div>  */}
-      <p className="text-white font-normal text-lg text-center mt-10">
+      <p className="text-white font-normal text-lg text-center mt-10 px-4">
         &copy; Copyright Total Touch Services {new Date().getFullYear()} - Terms
         & Conditions | Privacy Policy
       </p>
