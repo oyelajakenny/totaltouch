@@ -58,16 +58,20 @@ const Footer = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 placeholder:text-gray-400"
                 />
+                {error && (
+                  <p className="text-red-500 text-sm text-center mt-1">
+                    {error}
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full lg:w-fit bg-blue-50 text-[#0A58A2] px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+                  className="w-full lg:w-fit bg-blue-50 text-[#0A58A2] px-4 py-2 rounded-lg hover:bg-[#0A58A2] hover:text-amber-50 transition-colors"
                 >
                   Subscribe
                 </button>
               </div>
-              {error && <p className="text-red-500 text-sm text-center mt-3">{error}</p>}
 
               <p className="text-center text-white text-sm mt-2">
                 We respect your privacy, we won&apos;t spam you.
