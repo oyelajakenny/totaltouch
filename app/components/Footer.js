@@ -70,7 +70,7 @@ const Footer = () => {
               {error && <p className="text-red-500 text-sm mt-3">{error}</p>}
 
               <p className="text-center text-white text-sm mt-2">
-                We respect your privacy, we won't spam you.
+                We respect your privacy, we won&apos;t spam you.
               </p>
             </form>
           </div>
@@ -227,11 +227,10 @@ const Footer = () => {
         </div> 
       </div>  */}
       <p className="text-white font-normal text-lg text-center mt-10">
-        &copy; Copyright Total Touch Services {new Date().getFullYear()} - Terms &
-        Conditions | Privacy Policy
+        &copy; Copyright Total Touch Services {new Date().getFullYear()} - Terms
+        & Conditions | Privacy Policy
       </p>
     </footer>
-
   );
 };
 
