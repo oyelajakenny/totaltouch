@@ -74,46 +74,46 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="flex flex-col justify-between h-screen items-center  text-lg transition-all duration-300 w-full   ">
-            <nav className=" flex flex-col justify-start items-start lg:hidden px-3 space-y-7 text-lg font-semibold text-gray-600 w-full ">
+          <div className="flex flex-col gap-40 justify-between items-center  text-lg w-full px-3.5   ">
+            <nav className=" flex flex-col justify-start items-start lg:hidden space-y-3 text-lg font-semibold text-gray-600 w-full ">
               <Link
                 href="/"
                 onClick={closeMenu}
-                className="hover:text-[#0A58A2]"
+                className="hover:bg-blue-100 w-full rounded-md px-2 py-1"
               >
                 Home
               </Link>
               <Link
                 href="/about-us"
                 onClick={closeMenu}
-                className="hover:text-[#0A58A2]"
+                className="hover:bg-blue-100 w-full rounded-md px-2 py-1"
               >
                 About Us
               </Link>
               <Link
                 href="/service"
                 onClick={closeMenu}
-                className="hover:text-[#0A58A2]"
+                className="hover:bg-blue-100 w-full rounded-md px-2 py-1"
               >
                 Our Services
               </Link>
               <Link
                 href="/service"
                 onClick={closeMenu}
-                className="hover:text-[#0A58A2]"
+                className="hover:bg-blue-100 w-full rounded-md px-2 py-1"
               >
                 Partner With Us
               </Link>
               <Link
                 href="/contact-us"
                 onClick={closeMenu}
-                className="hover:text-[#0A58A2]"
+                className="hover:bg-blue-100 w-full rounded-md px-2 py-1"
               >
                 Contact Us
               </Link>
             </nav>
-            <div className="flex flex-col lg:hidden gap-4 w-full space-x-4 px-3">
-              <div className="flex flex-col lg:hidden gap-4 w-full space-x-4 px-3">
+            <div className="flex flex-col gap-3 lg:hidden w-full ">
+              <div className="flex flex-col lg:hidden gap-4 w-full space-x-4">
                 <button
                   className="bg-blue-100 py-2 w-full px-6 font-semibold text-[#0A58A2] rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
                   onClick={closeMenu}
@@ -129,16 +129,16 @@ const Navbar = () => {
               </div>
               <div className="flex justify-center gap-5">
                 <a href="#">
-                  <FaTwitter className="size-7 text-[#0A58A2]" />
+                  <FaTwitter className="size-7 text-gray-600" />
                 </a>
                 <a href="#">
-                  <FaFacebook className="size-7 text-[#0A58A2]" />
+                  <FaFacebook className="size-7 text-gray-600" />
                 </a>
                 <a href="#">
-                  <FaWhatsapp className="size-7 text-[#0A58A2]" />
+                  <FaWhatsapp className="size-7 text-gray-600" />
                 </a>
                 <a href="#">
-                  <FaInstagram className="size-7 text-[#0A58A2]" />
+                  <FaInstagram className="size-7 text-gray-600" />
                 </a>
               </div>
             </div>
