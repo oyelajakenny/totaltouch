@@ -4,6 +4,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { IoMdMenu } from "react-icons/io";
+import { FaFacebook } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa6";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,64 +67,80 @@ const Navbar = () => {
           <div className="flex justify-end p-4">
             <button
               onClick={closeMenu}
-              className="text-gray-700 font-bold text-xl focus:outline-none"
+              className="bg-[#0A58A2] text-amber-50 p-1 rounded-md cursor-pointer"
               aria-label="Close menu"
             >
-              ✕
+              <IoMdClose size={25} />
             </button>
           </div>
 
-          <div className="flex flex-col justify-center h-screen items-center gap-6 text-lg transition-all duration-300   ">
-            <nav className=" flex flex-col justify-center items-center text-center lg:hidden space-y-7 text-lg font-semibold text-gray-600 ">
+          <div className="flex flex-col justify-between h-screen items-center  text-lg transition-all duration-300 w-full   ">
+            <nav className=" flex flex-col justify-start items-start lg:hidden px-3 space-y-7 text-lg font-semibold text-gray-600 w-full ">
               <Link
                 href="/"
                 onClick={closeMenu}
-                className="hover:text-blue-600"
+                className="hover:text-[#0A58A2]"
               >
                 Home
               </Link>
               <Link
                 href="/about-us"
                 onClick={closeMenu}
-                className="hover:text-blue-600"
+                className="hover:text-[#0A58A2]"
               >
                 About Us
               </Link>
               <Link
                 href="/service"
                 onClick={closeMenu}
-                className="hover:text-blue-600"
+                className="hover:text-[#0A58A2]"
               >
                 Our Services
               </Link>
               <Link
                 href="/service"
                 onClick={closeMenu}
-                className="hover:text-blue-600"
+                className="hover:text-[#0A58A2]"
               >
                 Partner With Us
               </Link>
               <Link
                 href="/contact-us"
                 onClick={closeMenu}
-                className="hover:text-blue-600"
+                className="hover:text-[#0A58A2]"
               >
                 Contact Us
               </Link>
             </nav>
             <div className="flex flex-col lg:hidden gap-4 w-full space-x-4 px-3">
-              <button
-                className="bg-blue-100 py-2 w-full px-6 font-semibold text-[#0A58A2] rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
-                onClick={closeMenu}
-              >
-                GET QUOTE
-              </button>
-              <button
-                className="bg-[#0A58A2] w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700"
-                onClick={closeMenu}
-              >
-                BOOK CLEANING
-              </button>
+              <div className="flex flex-col lg:hidden gap-4 w-full space-x-4 px-3">
+                <button
+                  className="bg-blue-100 py-2 w-full px-6 font-semibold text-[#0A58A2] rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
+                  onClick={closeMenu}
+                >
+                  GET QUOTE
+                </button>
+                <button
+                  className="bg-[#0A58A2] w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700"
+                  onClick={closeMenu}
+                >
+                  BOOK CLEANING
+                </button>
+              </div>
+              <div className="flex justify-center gap-5">
+                <a href="#">
+                  <FaTwitter className="size-7 text-[#0A58A2]" />
+                </a>
+                <a href="#">
+                  <FaFacebook className="size-7 text-[#0A58A2]" />
+                </a>
+                <a href="#">
+                  <FaWhatsapp className="size-7 text-[#0A58A2]" />
+                </a>
+                <a href="#">
+                  <FaInstagram className="size-7 text-[#0A58A2]" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
