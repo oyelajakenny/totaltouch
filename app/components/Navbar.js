@@ -33,6 +33,9 @@ const Navbar = () => {
             <Link href="/service" className="hover:text-blue-600">
               Our Services
             </Link>
+            <Link href="/service" className="hover:text-blue-600">
+              Partner With Us
+            </Link>
             <Link href="/contact-us" className="hover:text-blue-600">
               Contact Us
             </Link>
@@ -89,6 +92,13 @@ const Navbar = () => {
                 className="hover:text-blue-600"
               >
                 Our Services
+              </Link>
+              <Link
+                href="/service"
+                onClick={closeMenu}
+                className="hover:text-blue-600"
+              >
+                Partner With Us
               </Link>
               <Link
                 href="/contact-us"
