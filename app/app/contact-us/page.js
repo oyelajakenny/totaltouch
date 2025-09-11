@@ -1,6 +1,6 @@
-import React from 'react'
-import {contact} from '../../constants/index'
-
+"use client";
+import React from "react";
+import { contact } from "../../constants";
 
 const page = () => {
   return (
@@ -23,9 +23,11 @@ const page = () => {
                 <div className="p-2 w-fit rounded-lg bg-blue-200 text-blue-900">
                   {items.icon}
                 </div>
-                <div className='flex flex-col justify-start items-start w-fit'>
+                <div className="flex flex-col justify-start items-start w-fit">
                   <h1 className="font-semibold text-xs">{items.title}</h1>
-                  <h2 className="font-normal text-[12px] overflow-hidden text-wrap">{items.heading}</h2>
+                  <h2 className="font-normal text-[12px] overflow-hidden text-wrap">
+                    {items.heading}
+                  </h2>
                   <p className="text-xs text-gray-500">{items.description}</p>
                 </div>
               </div>
@@ -64,6 +66,6 @@ const page = () => {
       </div>
     </div>
   );
-}
+};
 
-export default page
+export default page;
