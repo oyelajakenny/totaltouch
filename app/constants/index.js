@@ -1,7 +1,13 @@
+"use client";
 import { FaHome } from "react-icons/fa";
 import { RiHomeOfficeFill } from "react-icons/ri";
 import { MdLocalLaundryService } from "react-icons/md";
 import { LuConstruction } from "react-icons/lu";
+import { MdOutlineMail } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
+import { IoMdTime } from "react-icons/io";
+import { FiPhone } from "react-icons/fi";
+
 import path from "path";
 
 export const home = [
@@ -58,18 +64,18 @@ export const services = [
   },
 ];
 
-export const about =[
+export const about = [
   {
-    name : "About Us",
-    path : "/about"
+    name: "About Us",
+    path: "/about",
   },
   {
     name: "Career",
-    path: "/career"
+    path: "/career",
   },
   {
     name: "Terms Of Service",
-    path: "/terms"
+    path: "/terms",
   },
 ];
 
@@ -144,7 +150,31 @@ export const support = [
     name: "Terms of Service",
     path: "/terms-of-service",
   },
-  
 ];
 
-
+export const contact = [
+  {
+    icon: <FiPhone />,
+    title: "Phone",
+    heading: "08149562597",
+    description: "Available 24/7",
+  },
+  {
+    icon: <MdOutlineMail />,
+    title: "Email",
+    heading: "totaltouchservices@gmail.com",
+    description: "Response within 2 hours",
+  },
+  {
+    icon: <CiLocationOn />,
+    title: "Address",
+    heading: "31, Adeshina Ogunfolu St, Eyita Ikorodu, Lagos",
+    description: "Lagos Only",
+  },
+  {
+    icon: <IoMdTime />,
+    title: "Business Hours",
+    heading: "Mon - Sat: 8:00 AM - 6:00 PM",
+    description: "Closed on Sundays",
+  },
+];
