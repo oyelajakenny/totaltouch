@@ -1,5 +1,6 @@
 import React from 'react'
-import { contact } from '@/constants/index'
+import {contact} from '../../constants/index'
+
 
 const page = () => {
   return (
