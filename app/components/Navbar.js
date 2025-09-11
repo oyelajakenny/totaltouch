@@ -8,6 +8,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
+import { MdOutlinePhone } from "react-icons/md";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,11 +48,15 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex  space-x-4">
-          <button className="bg-white py-2 px-6 font-semibold text-[#0A58A2] rounded-lg shadow-md cursor-pointer hover:bg-gray-100">
-            GET QUOTE
-          </button>
+          <div className="flex items-center space-x-2">
+            <MdOutlinePhone />
+            <p className=" font-normal text-gray-500 text-sm  cursor-pointer">
+              08149562597
+            </p>
+          </div>
+
           <button className="bg-[#0A58A2] py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700">
-            BOOK CLEANING
+            Book Now
           </button>
         </div>
         <div
@@ -75,7 +80,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex flex-col gap-40 justify-between items-center  text-lg w-full px-3.5   ">
-            <nav className=" flex flex-col justify-start items-start lg:hidden space-y-3 text-lg font-semibold text-gray-600 w-full ">
+            <nav className=" flex flex-col justify-start items-start lg:hidden space-y-3 text-sm font-semibold text-gray-600 w-full ">
               <Link
                 href="/"
                 onClick={closeMenu}
@@ -124,7 +129,7 @@ const Navbar = () => {
                   className="bg-[#0A58A2] w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700"
                   onClick={closeMenu}
                 >
-                  BOOK CLEANING
+                  Book Now
                 </button>
               </div>
               <div className="flex justify-center gap-5">
