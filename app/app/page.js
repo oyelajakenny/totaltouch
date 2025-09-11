@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "../components/HeroSection";
 import Service from "../components/Service";
 import BookService from "../components/BookService";
@@ -8,8 +10,8 @@ export default function Home() {
     <div className="">
       <HeroSection />
       <Service />
-      <BookService/>
-      <CustomerExperience/>
+      <BookService />
+      <CustomerExperience />
     </div>
   );
 }
