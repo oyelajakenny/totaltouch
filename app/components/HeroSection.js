@@ -14,7 +14,8 @@ const HeroSection = () => {
         </h1>
         <p className="text-base sm:text-lg md:text-lg md:text-center lg:text-left text-gray-700">
           Experience the perfect clean with our eco-friendly solutions. From
-          home cleaning to laundry pickup & delivery - we've got you covered!
+          home cleaning to laundry pickup & delivery - we&lsquo;ve got you
+          covered!
         </p>
         <div className="w-full flex justify-center lg:justify-start">
           <div className="flex justify-center items-center gap-3 w-full sm:w-auto ">
