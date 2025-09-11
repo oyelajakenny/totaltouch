@@ -1,28 +1,28 @@
 import Image from 'next/image'
 import React from 'react'
+import { HiMiniArrowSmallRight } from "react-icons/hi2";
 
 
 const HeroSection = () => {
   return (
     <div className="container mx-auto flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between py-12 px-6 ">
       <div className="w-full lg:w-1/2 flex flex-col items-center md:items-start justify-center space-y-6 md:space-y-10 md:pr-16 text-center md:text-left">
-        <h1 className="font-bold leading-tight text-2xl sm:text-4xl md:text-5xl md:text-center lg:text-7xl lg:text-left">
+        <h1 className="font-bold  text-2xl sm:text-4xl md:text-5xl md:text-center lg:text-7xl lg:text-left">
           Spotless <span className="text-[#0A58A2]">Homes</span> &{" "}
           <span className="text-[#0A58A2]">Offices</span> Cleaning and Fresh{" "}
           <span className="text-[#0A58A2]">Laundry</span>
         </h1>
         <p className="text-base sm:text-lg md:text-lg md:text-center lg:text-left text-gray-700">
-          Enjoy the Comfort of a Fresh, Clean Home, Office and Wardrobe with Our
-          Expert Services.
+          Experience the perfect clean with our eco-friendly solutions. From
+          home cleaning to laundry pickup & delivery - we've got you covered!
         </p>
-        <div className='w-full flex justify-center lg:justify-start'>
-          
+        <div className="w-full flex justify-center lg:justify-start">
           <div className="flex justify-center items-center gap-3 w-full sm:w-auto ">
-            <button className="bg-[#0A58A2] text-white py-2 px-6 rounded-lg shadow-md  ">
-              Get Quote
+            <button className="bg-[#0A58A2] text-white flex items-center gap-2  py-2 px-8 rounded-md shadow-md  sm:w-auto hover:bg-blue-900 hover:scale-105 transition-transform">
+              Book A Service <HiMiniArrowSmallRight size={25} />
             </button>
-            <button className="bg-white text-[#0A58A2] py-2 px-6 rounded-lg shadow-md  sm:w-auto hover:bg-gray-100">
-              Book Cleaning
+            <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md hover:scale-105   ">
+              Learn More
             </button>
           </div>
         </div>
