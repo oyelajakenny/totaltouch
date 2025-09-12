@@ -61,7 +61,7 @@ const Footer = () => {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 placeholder:text-gray-400"
                 />
                 {error && (
-                  <p className="text-red-500 text-sm text-center mt-1">
+                  <p className="lg:hidden text-red-500 text-sm text-center mt-1">
                     {error}
                   </p>
                 )}
@@ -72,7 +72,11 @@ const Footer = () => {
                   Subscribe
                 </button>
               </div>
-
+              {error && (
+                <p className="hidden lg:block text-red-500 text-sm text-center mt-1">
+                  {error}
+                </p>
+              )}
               <p className="text-center text-white text-sm mt-2">
                 We respect your privacy, we won&apos;t spam you.
               </p>
