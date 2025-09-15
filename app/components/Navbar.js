@@ -69,7 +69,7 @@ const Navbar = () => {
       </div>
       {menuOpen && (
         <div className="fixed inset-0 bg-white z-20">
-          <div className="flex justify-end p-4">
+          <div className="flex justify-end p-4 items-start">
             <button
               onClick={closeMenu}
               className="bg-[#0A58A2] text-amber-50 p-1 rounded-md cursor-pointer"
@@ -119,12 +119,12 @@ const Navbar = () => {
             </nav>
             <div className="flex flex-col gap-3 lg:hidden w-full ">
               <div className="flex flex-col lg:hidden gap-4 w-full space-x-4">
-                <button
-                  className="bg-blue-100 py-2 w-full px-6 font-semibold text-[#0A58A2] rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
-                  onClick={closeMenu}
-                >
-                  GET QUOTE
-                </button>
+                <div className="flex justify-center items-center space-x-2 w-full bg-blue-100 rounded-md px-2 py-3">
+                  <MdOutlinePhone />
+                  <p className=" font-semibold text-gray-500 text-lg  cursor-pointer">
+                    08149562597
+                  </p>
+                </div>
                 <button
                   className="bg-[#0A58A2] w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700"
                   onClick={closeMenu}
