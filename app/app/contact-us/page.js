@@ -20,7 +20,7 @@ const page = () => {
         </div> */}
       </div>
       <div className="container  w-full flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-start px-4 lg:px-40 ">
-        <div className="w-full  lg:w-1/2 m-7 grid grid-cols-2 gap-3 ">
+        <div className="w-full  lg:w-1/2 m-7 grid grid-cols-1 sm:grid-cols-2 gap-3 ">
           {contact.map((items, index) => {
             return (
               <div
@@ -30,9 +30,9 @@ const page = () => {
                 <div className="p-2 w-fit rounded-lg bg-blue-200 text-blue-900">
                   {items.icon}
                 </div>
-                <div className="flex flex-col justify-start items-start w-fit">
+                <div className="flex flex-col justify-start items-start min-w-0 w-full">
                   <h1 className="font-semibold text-xs">{items.title}</h1>
-                  <h2 className="font-normal text-[12px] overflow-hidden text-wrap">
+                  <h2 className="font-normal text-[12px] break-words whitespace-normal">
                     {items.heading}
                   </h2>
                   <p className="text-xs text-gray-500">{items.description}</p>
