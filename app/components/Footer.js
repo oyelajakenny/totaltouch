@@ -234,7 +234,7 @@ const Footer = () => {
           />
         </div> 
       </div>  */}
-      <p className="text-white font-normal text-lg text-center mt-10 px-4">
+      <p className="text-white font-normal text-sm text-center mt-10 px-4">
         &copy; Copyright Total Touch Services {new Date().getFullYear()} - Terms
         & Conditions | Privacy Policy
       </p>
