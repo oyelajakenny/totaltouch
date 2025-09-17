@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+"use client";
 import React, { useState } from "react";
 
 const page = () => {
@@ -13,6 +13,7 @@ const page = () => {
     instructions: "",
   });
   const [error, setError] = useState({});
+  const [isBooking, setIsBooking] = useState(false);
   const validate = () => {
     const newErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
@@ -34,16 +35,25 @@ const page = () => {
     return Object.keys(newErrors).lenth === 0;
   };
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log(formData);
+      alert("Form Submitted Successfully");
+    }
+  };
+
+  const inputClass = "w-full border p-2";
+
   return (
     <section className="w-full">
       <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <div>
               <label className="block text-sm font-medium mb-1">
@@ -52,10 +62,16 @@ const page = () => {
               <input
                 type="text"
                 value={formData.fullName}
+                name="fullName"
                 onChange={handleChange}
                 placeholder="Enter Full Name"
-                className="w-full p-2 border border-blue-200 rounded-lg"
+                className={`${inputClass} ${
+                  error.fullName ? "border-red-500" : ""
+                }`}
               />
+              {error.fullName && (
+                <p className="text-red-500 text-sm mt-1">{error.fullName}</p>
+              )}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">
@@ -65,9 +81,15 @@ const page = () => {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
+                name="phone"
                 placeholder="Enter Your Phone Number"
-                className="w-full p-2 border border-blue-200 rounded-lg"
+                className={`${inputClass} ${
+                  error.phone ? "border-red-500" : ""
+                }`}
               />
+              {error.phone && (
+                <p className="text-red-500 text-sm mt-1">{error.phone}</p>
+              )}
             </div>
           </div>
           <div>
@@ -78,24 +100,38 @@ const page = () => {
               type="email"
               value={formData.email}
               onChange={handleChange}
+              name="email"
               placeholder="youremail@example.com"
-              className="w-full p-2 border border-blue-200 rounded-lg"
+              className={`${inputClass} ${error.email ? "border-red-500" : ""}`}
             />
+            {error.email && (
+              <p className="text-red-500 text-sm mt-1">{error.email}</p>
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">
               Service Type *
             </label>
-            <select value={formData.serviceType} onChange={handleChange} className="w-full p-2 border border-blue-200 rounded-lg">
+            <select
+              value={formData.serviceType}
+              onChange={handleChange}
+              name="serviceType"
+              className={`${inputClass} ${
+                error.serviceType ? "border-red-500" : ""
+              }`}
+            >
               <option>Select a service</option>
-              <option>Home Cleaning</option>
-              <option>Regular Cleaning</option>
-              <option>Office Cleaning</option>
-              <option>Move In/Out Cleaning</option>
-              <option>Laundry Pick Up</option>
-              <option>Fumigation Service</option>
-              <option>Deep Cleaning</option>
+              <option value="home">Home Cleaning</option>
+              <option value="regular">Regular Cleaning</option>
+              <option value="office">Office Cleaning</option>
+              <option value="move">Move In/Out Cleaning</option>
+              <option value="laundry">Laundry Pick Up</option>
+              <option value="fumigation">Fumigation Service</option>
+              <option value="deep">Deep Cleaning</option>
             </select>
+            {error.serviceType && (
+              <p className="text-red-500 text-sm mt-1">{error.serviceType}</p>
+            )}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             <div>
@@ -106,9 +142,17 @@ const page = () => {
                 type="date"
                 value={formData.preferredDate}
                 onChange={handleChange}
+                name="preferredDate"
                 placeholder="Select Date"
-                className="w-full border border-blue-200 rounded-lg p-2"
+                className={`${inputClass} ${
+                  error.preferredDate ? "border-red-500" : ""
+                }`}
               />
+              {error.preferredDate && (
+                <p className="text-red-500 text-sm mt-1">
+                  {error.preferredDate}
+                </p>
+              )}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1">
@@ -118,9 +162,17 @@ const page = () => {
                 type="time"
                 value={formData.preferredTime}
                 onChange={handleChange}
+                name="preferredTime"
                 placeholder="Select Time"
-                className="w-full border border-blue-200 rounded-lg p-2"
+                className={`${inputClass} ${
+                  error.preferredTime ? "border-red-500" : ""
+                }`}
               />
+              {error.preferredTime && (
+                <p className="text-red-500 text-sm mt-1">
+                  {error.preferredTime}
+                </p>
+              )}
             </div>
           </div>
           <div>
@@ -131,28 +183,35 @@ const page = () => {
               type="text"
               value={formData.address}
               onChange={handleChange}
+              name="address"
               placeholder="Enter full address including city and zip code"
-              className="w-full border border-blue-200 rounded-lg p-2"
+              className={`${inputClass} ${
+                error.address ? "border-red-500" : ""
+              }`}
             />
+            {error.address && (
+              <p className="text-red-500 text-sm mt-1">{error.address}</p>
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">
               Special Instructions
             </label>
             <textarea
-            value={formData.instructions}
-            onChange={handleChange}
+              value={formData.instructions}
+              onChange={handleChange}
+              name="instructions"
               placeholder="Any special requests or instructions for our team"
-              className="w-full border h-24 border-blue-200 rounded-lg p-2"
+              className={inputClass + " h-24"}
             />
           </div>
 
           <div>
             <button
               type="submit"
-              className="bg-blue-900 w-full py-2 text-amber-50 rounded-sm"
+              className="bg-blue-900 w-full py-2 text-amber-50 rounded-sm cursor-pointer"
             >
-              Book Service
+              {isBooking ? "Booking Service" : "Book Service"}
             </button>
           </div>
         </form>
