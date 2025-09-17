@@ -15,7 +15,20 @@ const page = () => {
   const [error, setError] = useState({})
 const validate =()=>{
 const newErrors = {};
+if(!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
+const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+if (!formData.phone) newErrors.phone = "Phone number is required";
+else if (!phoneRegex.test(formData.phone)) newErrors.phone = "Format: (123) 456-7890";
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!formData.email) newErrors.email = "Email is required"
+else if(!emailRegex.test(formData.email)) newErrors.email = "Enter a valid Email";
+if(!formData.serviceType) newErrors.serviceType = "Please select a service";
+if(!formData.preferredDate) newErrors.preferredDate = "Pick a date";
+if(!formData.preferredTime) newErrors.preferredTime = "Pick a time";
+if(!formData.address.trim()) newErrors.address = "Address is required";
 
+setError(newErrors)
+return Object.keys(newErrors).lenth === 0;
 }
 
   return (
