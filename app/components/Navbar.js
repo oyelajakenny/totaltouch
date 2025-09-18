@@ -54,10 +54,12 @@ const Navbar = () => {
               08149562597
             </p>
           </div>
-
-          <button className="bg-[#0A58A2] py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700">
-            Book Now
-          </button>
+          <Link href="/booking">
+           
+            <button className="bg-[#0A58A2] py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700">
+              Book Now
+            </button>
+          </Link>
         </div>
         <div
           className="lg:hidden flex items-center bg-[#0A58A2] text-amber-50 p-1 rounded-md cursor-pointer"
