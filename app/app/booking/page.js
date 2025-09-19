@@ -5,7 +5,7 @@ import { RiCalendarScheduleLine } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import toast from "react-hot-toast";
 
-export const page = () => {
+const Page = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -316,4 +316,4 @@ Special Instructions: ${formData.instructions || "None"}
   );
 };
 
-export default page;
+export default Page;
