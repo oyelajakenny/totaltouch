@@ -5,7 +5,7 @@ import { RiCalendarScheduleLine } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import toast from "react-hot-toast";
 
-const page = () => {
+export const page = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -118,7 +118,7 @@ Special Instructions: ${formData.instructions || "None"}
       <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
         <div className="bg-blue-50 py-3 mb-2">
           <h1 className="text-sm text-center">
-            Fill out the form below and we'll get back to you with a
+            Fill out the form below and we&apos;ll get back to you with a
             confirmation
           </h1>
         </div>
