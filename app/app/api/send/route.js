@@ -14,8 +14,8 @@ async function sendEmail(formData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "TotalTouch Cleaning <onboarding@resend.dev>",
-      to: ["premiumitng@gmail.com"],
+      from: "New Booking <onboarding@resend.dev>",
+      to: ["totaltouchservices@gmail.com"],
       subject: `New Booking Request from ${formData.name}`,
       react: EmailTemplate(formData),
     });
