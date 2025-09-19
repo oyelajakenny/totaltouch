@@ -7,7 +7,6 @@ import {
   Preview,
   Section,
   Text,
-  span,
 } from "@react-email/components";
 import * as React from "react";
 
@@ -45,18 +44,25 @@ export function EmailTemplate({ name, email, service, date, message }) {
             <Text style={text}>
               <strong>Customer Details</strong>
             </Text>
-            <Text style={text}> <span style={span}>Name:</span> {name}</Text>
-            <Text style={text}>Email: {email}</Text>
-            <Text style={text}>Phone: {phone}</Text>
+            <Text style={text}>
+              {" "}
+              <span style={span}>Name:</span> {name}
+            </Text>
+            <Text style={text}>
+              <span style={span}>Email:</span> {email}
+            </Text>
+            <Text style={text}>
+              <span style={span}>Phone:</span> {phone}
+            </Text>
           </Section>
 
           <Section style={section}>
             <Text style={text}>
               <strong>Booking Details</strong>
             </Text>
-            <Text style={text}>Service: {serviceName}</Text>
-            <Text style={text}>Date & Time: {date}</Text>
-            <Text style={text}>Address: {address}</Text>
+            <Text style={text}><span style={span}>Service:</span> {serviceName}</Text>
+            <Text style={text}> <span style={span}>Date & Time:</span> {date}</Text>
+            <Text style={text}><span style={span}>Address:</span> {address}</Text>
           </Section>
 
           {instructions && instructions !== "None" && (
@@ -67,6 +73,32 @@ export function EmailTemplate({ name, email, service, date, message }) {
               <Text style={text}>{instructions}</Text>
             </Section>
           )}
+          {/* Footer Section */}
+          <Section style={footerSection}>
+            <Text style={footerText}>
+              {new Date().getFullYear} 2025 TotalTouch Cleaning. All rights reserved.
+            </Text>
+            <Text style={footerText}>
+              Follow us:{" "}
+              <a
+                href="https://facebook.com/totaltouchcleaning"
+                style={linkStyle}
+              >
+                Facebook
+              </a>
+              {" | "}
+              <a href="https://twitter.com/totaltouchclean" style={linkStyle}>
+                Twitter
+              </a>
+              {" | "}
+              <a
+                href="https://instagram.com/totaltouchcleaning"
+                style={linkStyle}
+              >
+                Instagram
+              </a>
+            </Text>
+          </Section>
         </Container>
       </Body>
     </Html>
@@ -74,32 +106,31 @@ export function EmailTemplate({ name, email, service, date, message }) {
 }
 
 const main = {
-  backgroundColor: "#f6f9fc",
+  backgroundColor: " #0A58A2 ",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
 };
 
 const container = {
-  backgroundColor: "white",
+  backgroundColor: "#f6f9fc",
   margin: "0 auto",
   padding: "20px",
-  borderTop:"5px solid blue"
-  
+  borderTop: "5px solid blue",
 };
 
 const heading = {
   fontSize: "1.5rem",
   lineHeight: "1.3",
   fontWeight: "700",
-  color: "blue",
+  color: "#0A58A2",
   padding: "17px 0 0",
 };
 
 const section = {
-    backgroundColor:"white",
+  backgroundColor: "white",
   padding: "24px",
   border: "solid 1px #dedede",
-  borderBottom:"2px solid grey",
+  borderBottom: "2px solid grey",
   margin: "15px 0",
 };
 
@@ -110,7 +141,27 @@ const text = {
   lineHeight: "24px",
 };
 
-const span ={
-    color: "blue",
-    fontWeight:"600",
+const span = {
+  color: "black",
+  fontWeight: "600",
+};
+
+const footerSection = {
+  backgroundColor: "#f6f9fc",
+  padding: "16px 0 0 0",
+  borderTop: "1px solid #dedede",
+  textAlign: "center",
+  marginTop: "24px",
+};
+
+const footerText = {
+  color: "#888",
+  fontSize: "14px",
+  margin: "4px 0",
+};
+
+const linkStyle = {
+  color: "#0A58A2",
+  textDecoration: "none",
+  margin: "0 4px",
 };
