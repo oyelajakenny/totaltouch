@@ -124,6 +124,10 @@ export const service = [
     path: "/dry-cleaning",
   },
   {
+    name: "Fumigation Service",
+    path: "/fumigation",
+  },
+  {
     name: "Post-Construction Cleaning",
     path: "/post-construction-cleaning",
   },
