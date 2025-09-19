@@ -4,6 +4,7 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import toast from "react-hot-toast";
+import { ScaleLoader } from "react-spinners";
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -89,22 +90,24 @@ Special Instructions: ${formData.instructions || "None"}
           instructions: "",
         });
 
-         toast.success(
-           "Booking submitted successfully! We will contact you shortly.",
-           {
-             style: {
-               border: "1px solid bg-[#0A58A2]",
-               padding: "16px",
-               color: "#0A58A2",
-             },
-             iconTheme: {
-               primary: "#0A58A2",
-               secondary: "#ffffff",
-             },
-           }
-         );
+        toast.success(
+          "Booking submitted successfully! We will contact you shortly.",
+          {
+            style: {
+              border: "1px solid bg-[#0A58A2]",
+              padding: "16px",
+              color: "#0A58A2",
+            },
+            iconTheme: {
+              primary: "#0A58A2",
+              secondary: "#ffffff",
+            },
+          }
+        );
       } catch (error) {
-        toast.error(error.message || "Failed to submit booking. Please try again.");
+        toast.error(
+          error.message || "Failed to submit booking. Please try again."
+        );
       } finally {
         setIsBooking(false);
       }
@@ -307,7 +310,11 @@ Special Instructions: ${formData.instructions || "None"}
               type="submit"
               className="bg-[#0A58A2] font-semibold w-full py-2 text-amber-50 rounded-sm cursor-pointer"
             >
-              {isBooking ? "Booking Service" : "Book Service"}
+              {isBooking ? (
+                <ScaleLoader color="#ffffff" height={25} width={4} />
+              ) : (
+                "Book Service"
+              )}
             </button>
           </div>
         </form>
