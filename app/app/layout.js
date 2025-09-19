@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "react-hot-toast";
 
 
 export const metadata = {
@@ -18,11 +19,12 @@ export default function RootLayout({ children }) {
           attribute="class"
           defaultTheme="Dark"
           enableSystem
-          
           disableTransitionOnChange
         >
           <Navbar />
           {children}
+          <Toaster />
+
           <Footer />
         </ThemeProvider>
       </body>
