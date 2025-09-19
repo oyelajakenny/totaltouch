@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
+import Link from 'next/link';
 
 
 const HeroSection = () => {
@@ -19,9 +20,13 @@ const HeroSection = () => {
         </p>
         <div className="w-full flex justify-center lg:justify-start">
           <div className="flex justify-center items-center gap-3 w-full sm:w-auto ">
-            <button className="bg-[#0A58A2] text-white flex items-center gap-2  py-2 px-8 rounded-md shadow-md  sm:w-auto hover:bg-blue-900 hover:scale-105 transition-transform">
-              Book A Service <HiMiniArrowSmallRight size={25} />
-            </button>
+            <Link href="/booking" >
+              
+              <button className="bg-[#0A58A2] text-white flex items-center gap-2  py-2 px-8 rounded-md shadow-md  sm:w-auto hover:bg-blue-900 hover:scale-105 transition-transform cursor-pointer ">
+                Book A Service <HiMiniArrowSmallRight size={25} />
+              </button>
+            </Link>
+
             <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md hover:scale-105   ">
               Learn More
             </button>
