@@ -22,10 +22,14 @@ const Page = () => {
   const validate = () => {
     const newErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
-    const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+    else if(formData.fullName.length <= 2) newErrors.fullName = "Full name must be more than 2 characters";
+    else if (!/^[A-Za-z\s'-]+$/.test(formData.fullName)) newErrors.fullName = "Please enter a valid name";
+    // const phoneRegex = /^\(\d{3}\)\d{3}\d{5}$/;
     if (!formData.phone) newErrors.phone = "Phone number is required";
-    else if (!phoneRegex.test(formData.phone))
-      newErrors.phone = "Format: (123) 456-7890";
+    else if (formData.phone.length <= 7)
+      newErrors.phone = "Phone number must be greater than 7"
+    // else if (!phoneRegex.test(formData.phone))
+    //   newErrors.phone = "Format: (123) 456-7890";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) newErrors.email = "Email is required";
     else if (!emailRegex.test(formData.email))
