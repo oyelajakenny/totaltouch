@@ -29,7 +29,8 @@ if (error[name]) {
 }
   }
 
-  const handleSubmit = ()=>{
+  const handleSubmit = (e)=>{
+    e.preventDefault()
     if (validate()){
 console.log("Form submitted successfully")
     }
@@ -77,34 +78,39 @@ console.log("Form submitted successfully")
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <input
               type="text"
+              name="name"
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full"
             />
-            {error.name && <p>{error.name}</p>}
+            {error.name && <p className="text-red-500 text-sm mt-1" >{error.name}</p>}
             <input
               type="email"
+              name="email"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full"
             />
-            {error.email && <p>{error.email}</p>}
+            {error.email && <p className="text-red-500 text-sm mt-1" >{error.email}</p>}
             <input
               type="text"
+              name="subject"
               value={formData.subject}
               placeholder="Subject"
+              onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full"
             />
-            {error.subject && <p>{error.subject}</p>}
+            {error.subject && <p className="text-red-500 text-sm mt-1" >{error.subject}</p>}
             <textarea
               placeholder="Message"
+              name="message"
               value={formData.message}
               onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full h-[150px]"
             />
-            {error.message && <p>{error.message}</p>}
+            {error.message && <p className="text-red-500 text-sm mt-1">{error.message}</p>}
             <button
               type="submit"
               className=" w-full bg-[#0A58A2] text-white p-3 rounded-md  mx-auto"
