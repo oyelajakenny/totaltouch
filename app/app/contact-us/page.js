@@ -1,8 +1,40 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { contact } from "../../constants";
 
-const page = () => {
+const Page = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email:"",
+    subject: "",
+    message: "",
+  });
+  const [error, setError] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if(!formData.name) newErrors.name = "Name is required";
+    if(!formData.subject) newErrors.subject = "Subject is required"
+    if(!formData.message) newErrors.message = "Message is required"
+setError(newErrors)
+return newErrors;
+  };
+
+  const handleChange = (e)=>{
+    e.preventDefault()
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+if (error[name]) {
+  setError((prev) => ({ ...prev, [name]: "" }));
+}
+  }
+
+  const handleSubmit = ()=>{
+    if (validate()){
+console.log("Form submitted successfully")
+    }
+  }
+
   return (
     <div className="conatiner mx-auto flex flex-col justify-start items-center">
       <div className="flex flex-col gap-3 justify-center items-center text-center w-full my-10">
@@ -42,26 +74,37 @@ const page = () => {
           })}
         </div>
         <div className="bg-white p-10 rounded-md shadow-md m-5 w-full lg:w-1/2">
-          <form className="flex flex-col gap-5">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <input
               type="text"
               placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full"
             />
+            {error.name && <p>{error.name}</p>}
             <input
               type="email"
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full"
             />
+            {error.email && <p>{error.email}</p>}
             <input
               type="text"
+              value={formData.subject}
               placeholder="Subject"
               className="p-3 rounded-md border border-gray-300 w-full"
             />
+            {error.subject && <p>{error.subject}</p>}
             <textarea
               placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
               className="p-3 rounded-md border border-gray-300 w-full h-[150px]"
             />
+            {error.message && <p>{error.message}</p>}
             <button
               type="submit"
               className=" w-full bg-[#0A58A2] text-white p-3 rounded-md  mx-auto"
@@ -75,4 +118,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
