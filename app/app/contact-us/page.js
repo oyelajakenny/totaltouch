@@ -15,7 +15,9 @@ const Page = () => {
     const newErrors = {};
     if(!formData.name) newErrors.name = "Name is required";
     if(!formData.subject) newErrors.subject = "Subject is required"
-    if(!formData.message) newErrors.message = "Message is required"
+    if(!formData.email) newErrors.email = "Please enter an email"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter valid email"
+      if (!formData.message) newErrors.message = "Message is required";
 setError(newErrors)
 return newErrors;
   };
