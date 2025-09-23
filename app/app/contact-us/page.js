@@ -16,8 +16,9 @@ const Page = () => {
     if(!formData.name) newErrors.name = "Name is required";
     if(!formData.subject) newErrors.subject = "Subject is required"
     if(!formData.email) newErrors.email = "Please enter an email"
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter valid email"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter a valid email"
       if (!formData.message) newErrors.message = "Message is required";
+      else if(formData.message.length <= 10) newErrors.message = "Message too short, message must be more than 10 characters"
 setError(newErrors)
 return newErrors;
   };
@@ -37,6 +38,7 @@ if (error[name]) {
 console.log("Form submitted successfully")
     }
   }
+const inputClass = "p-3 rounded-md border border-gray-300 w-full";
 
   return (
     <div className="conatiner mx-auto flex flex-col justify-start items-center">
@@ -77,42 +79,50 @@ console.log("Form submitted successfully")
           })}
         </div>
         <div className="bg-white p-10 rounded-md shadow-md m-5 w-full lg:w-1/2">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <input
               type="text"
               name="name"
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className="p-3 rounded-md border border-gray-300 w-full"
+              className={`${inputClass} ${error.name ? "border border-red-500" : ""}  `}
             />
-            {error.name && <p className="text-red-500 text-sm mt-1" >{error.name}</p>}
+            {error.name && (
+              <p className="text-red-500 text-sm ">{error.name}</p>
+            )}
             <input
               type="email"
               name="email"
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className="p-3 rounded-md border border-gray-300 w-full"
+              className={`${inputClass} ${error.email ? "border border-red-500" : ""}  `}
             />
-            {error.email && <p className="text-red-500 text-sm mt-1" >{error.email}</p>}
+            {error.email && (
+              <p className="text-red-500 text-sm ">{error.email}</p>
+            )}
             <input
               type="text"
               name="subject"
               value={formData.subject}
               placeholder="Subject"
               onChange={handleChange}
-              className="p-3 rounded-md border border-gray-300 w-full"
+              className={`${inputClass} ${error.subject ? "border border-red-500" : ""}  `}
             />
-            {error.subject && <p className="text-red-500 text-sm mt-1" >{error.subject}</p>}
+            {error.subject && (
+              <p className="text-red-500 text-sm">{error.subject}</p>
+            )}
             <textarea
               placeholder="Message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="p-3 rounded-md border border-gray-300 w-full h-[150px]"
+              className={`${inputClass} ${error.message? "border-red-500" : "" }`}
             />
-            {error.message && <p className="text-red-500 text-sm mt-1">{error.message}</p>}
+            {error.message && (
+              <p className="text-red-500 text-sm">{error.message}</p>
+            )}
             <button
               type="submit"
               className=" w-full bg-[#0A58A2] text-white p-3 rounded-md  mx-auto"
