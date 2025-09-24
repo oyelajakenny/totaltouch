@@ -118,173 +118,190 @@ Special Instructions: ${formData.instructions || "None"}
     }
   };
 
-  const inputClass = "w-full border border-gray-300 p-2 rounded";
+  const inputClass ="w-full onFocus:border-[#F3F9FF] bg-white border border-gray-300 p-2 rounded";
 
   return (
     <section className="w-full my-8">
       <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
-        <div className="bg-blue-50 py-3 mb-2">
-          <h1 className="text-sm text-center">
+        <div className="bg-blue-50 py-3 mb-2 rounded shadow">
+          <h1 className="text-sm text-center ">
             Fill out the form below and we&apos;ll get back to you with a
             confirmation
           </h1>
         </div>
 
         <form onSubmit={handleSubmit} method="POST" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 space-y-6 p-4 border shadow-sm rounded border-gray-100 bg-gray-100">
+            <h1 className="font-semibold text-xl">Contact Details</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <div>
+                <label className="block text-sm font-medium mb-1 text-gray-600">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  value={formData.fullName}
+                  name="fullName"
+                  title="Full Name"
+                  onChange={handleChange}
+                  placeholder="Enter Full Name"
+                  className={`${inputClass} ${
+                    error.fullName ? "border-red-500" : ""
+                  }`}
+                />
+                {error.fullName && (
+                  <p className="text-red-500 text-sm mt-1">{error.fullName}</p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1 text-gray-600">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  title="Phone Number"
+                  name="phone"
+                  placeholder="Enter Your Phone Number"
+                  className={`${inputClass} ${
+                    error.phone ? "border-red-500" : ""
+                  }`}
+                />
+                {error.phone && (
+                  <p className="text-red-500 text-sm mt-1">{error.phone}</p>
+                )}
+              </div>
+            </div>
             <div>
-              <label className="block text-sm font-medium mb-1">
-                Full Name *
+              <label className="block text-sm font-medium mb-1 text-gray-600">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                name="email"
+                placeholder="youremail@example.com"
+                className={`${inputClass} ${error.email ? "border-red-500" : ""}`}
+              />
+              {error.email && (
+                <p className="text-red-500 text-sm mt-1">{error.email}</p>
+              )}
+            </div>
+          </div>
+          <div
+            className="  grid
+            grid-cols-1
+            space-y-6
+            p-4
+            border
+            shadow-sm
+            rounded
+            border-gray-100
+            bg-gray-100"
+          >
+            <h1 className="font-semibold text-xl">Service Details</h1>
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-600">
+                Service Type *
+              </label>
+              <select
+                value={formData.serviceType}
+                onChange={handleChange}
+                name="serviceType"
+                className={`${inputClass} ${
+                  error.serviceType ? "border-red-500" : ""
+                }`}
+              >
+                <option>Select a service</option>
+                <option value="home">Home Cleaning</option>
+                <option value="regular">Regular Cleaning</option>
+                <option value="office">Office Cleaning</option>
+                <option value="move">Move In/Out Cleaning</option>
+                <option value="laundry">Laundry Pick Up</option>
+                <option value="fumigation">Fumigation Service</option>
+                <option value="deep">Deep Cleaning</option>
+              </select>
+              {error.serviceType && (
+                <p className="text-red-500 text-sm mt-1">{error.serviceType}</p>
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
+              <div>
+                <label className="block text-sm font-medium mb-1 text-gray-600">
+                  Preferred date *
+                </label>
+                <input
+                  type="date"
+                  value={formData.preferredDate}
+                  onChange={handleChange}
+                  name="preferredDate"
+                  placeholder="Select Date"
+                  className={`${inputClass} ${
+                    error.preferredDate ? "border-red-500" : ""
+                  }`}
+                />
+                {error.preferredDate && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {error.preferredDate}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1 text-gray-600">
+                  Preferred Time *
+                </label>
+                <input
+                  type="time"
+                  value={formData.preferredTime}
+                  onChange={handleChange}
+                  name="preferredTime"
+                  placeholder="Select Time"
+                  className={`${inputClass} ${
+                    error.preferredTime ? "border-red-500" : ""
+                  }`}
+                />
+                {error.preferredTime && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {error.preferredTime}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1 text-gray-600">
+                Service Address *
               </label>
               <input
                 type="text"
-                value={formData.fullName}
-                name="fullName"
-                title="Full Name"
+                value={formData.address}
                 onChange={handleChange}
-                placeholder="Enter Full Name"
+                name="address"
+                placeholder="Enter full address including city and zip code"
                 className={`${inputClass} ${
-                  error.fullName ? "border-red-500" : ""
+                  error.address ? "border-red-500" : ""
                 }`}
               />
-              {error.fullName && (
-                <p className="text-red-500 text-sm mt-1">{error.fullName}</p>
+              {error.address && (
+                <p className="text-red-500 text-sm mt-1">{error.address}</p>
               )}
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">
-                Phone Number *
+              <label className="block text-sm font-medium mb-1 text-gray-600">
+                Special Instructions
               </label>
-              <input
-                type="tel"
-                value={formData.phone}
+              <textarea
+                value={formData.instructions}
                 onChange={handleChange}
-                title="Phone Number"
-                name="phone"
-                placeholder="Enter Your Phone Number"
-                className={`${inputClass} ${
-                  error.phone ? "border-red-500" : ""
-                }`}
+                name="instructions"
+                placeholder="Any special requests or instructions for our team"
+                className={inputClass + " h-24"}
               />
-              {error.phone && (
-                <p className="text-red-500 text-sm mt-1">{error.phone}</p>
-              )}
             </div>
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              name="email"
-              placeholder="youremail@example.com"
-              className={`${inputClass} ${error.email ? "border-red-500" : ""}`}
-            />
-            {error.email && (
-              <p className="text-red-500 text-sm mt-1">{error.email}</p>
-            )}
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Service Type *
-            </label>
-            <select
-              value={formData.serviceType}
-              onChange={handleChange}
-              name="serviceType"
-              className={`${inputClass} ${
-                error.serviceType ? "border-red-500" : ""
-              }`}
-            >
-              <option>Select a service</option>
-              <option value="home">Home Cleaning</option>
-              <option value="regular">Regular Cleaning</option>
-              <option value="office">Office Cleaning</option>
-              <option value="move">Move In/Out Cleaning</option>
-              <option value="laundry">Laundry Pick Up</option>
-              <option value="fumigation">Fumigation Service</option>
-              <option value="deep">Deep Cleaning</option>
-            </select>
-            {error.serviceType && (
-              <p className="text-red-500 text-sm mt-1">{error.serviceType}</p>
-            )}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Preferred date *
-              </label>
-              <input
-                type="date"
-                value={formData.preferredDate}
-                onChange={handleChange}
-                name="preferredDate"
-                placeholder="Select Date"
-                className={`${inputClass} ${
-                  error.preferredDate ? "border-red-500" : ""
-                }`}
-              />
-              {error.preferredDate && (
-                <p className="text-red-500 text-sm mt-1">
-                  {error.preferredDate}
-                </p>
-              )}
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Preferred Time *
-              </label>
-              <input
-                type="time"
-                value={formData.preferredTime}
-                onChange={handleChange}
-                name="preferredTime"
-                placeholder="Select Time"
-                className={`${inputClass} ${
-                  error.preferredTime ? "border-red-500" : ""
-                }`}
-              />
-              {error.preferredTime && (
-                <p className="text-red-500 text-sm mt-1">
-                  {error.preferredTime}
-                </p>
-              )}
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Service Address *
-            </label>
-            <input
-              type="text"
-              value={formData.address}
-              onChange={handleChange}
-              name="address"
-              placeholder="Enter full address including city and zip code"
-              className={`${inputClass} ${
-                error.address ? "border-red-500" : ""
-              }`}
-            />
-            {error.address && (
-              <p className="text-red-500 text-sm mt-1">{error.address}</p>
-            )}
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Special Instructions
-            </label>
-            <textarea
-              value={formData.instructions}
-              onChange={handleChange}
-              name="instructions"
-              placeholder="Any special requests or instructions for our team"
-              className={inputClass + " h-24"}
-            />
-          </div>
-          <div className="flex flex-col gap-2 justify-center bg-blue-50 p-2 w-full">
+
+          <div className="flex flex-col gap-2 justify-center bg-blue-50 rounded shadow p-2 w-full">
             <div className="flex  items-center gap-2">
               <IoMdCheckmarkCircleOutline
                 size={12}
