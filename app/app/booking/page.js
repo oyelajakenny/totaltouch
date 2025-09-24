@@ -295,7 +295,7 @@ Special Instructions: ${formData.instructions || "None"}
                 value={formData.instructions}
                 onChange={handleChange}
                 name="instructions"
-                placeholder="Any special requests or instructions for our team"
+                placeholder="Tell us about the service request, e.g total number of rooms, clothes quantity etc."
                 className={inputClass + " h-24"}
               />
             </div>
