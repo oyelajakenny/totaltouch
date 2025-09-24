@@ -8,12 +8,14 @@ const Page = () => {
     email:"",
     subject: "",
     message: "",
-  });
+  })
+  const [isSubmitting, setIsSubmitting]  = useState(false)
   const [error, setError] = useState({});
 
   const validate = () => {
     const newErrors = {};
     if(!formData.name) newErrors.name = "Name is required";
+    else if (formData.name.length < 2) newErrors.name = "Name can't be less than 2 characters"
     if(!formData.subject) newErrors.subject = "Subject is required"
     if(!formData.email) newErrors.email = "Please enter an email"
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter a valid email"
@@ -35,7 +37,7 @@ if (error[name]) {
   const handleSubmit = (e)=>{
     e.preventDefault()
     if (validate()){
-console.log("Form submitted successfully")
+
     }
   }
 const inputClass = "p-3 rounded-md border border-gray-300 w-full";
