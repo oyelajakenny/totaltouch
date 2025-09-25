@@ -22,12 +22,14 @@ const Page = () => {
   const validate = () => {
     const newErrors = {};
     if (!formData.fullName.trim()) newErrors.fullName = "Full Name is required";
-    else if(formData.fullName.length <= 3) newErrors.fullName = "Full name must be at least 4 characters";
-    else if (!/^[A-Za-z\s'-]+$/.test(formData.fullName)) newErrors.fullName = "Please enter a valid name";
+    else if (formData.fullName.length <= 3)
+      newErrors.fullName = "Full name must be at least 4 characters";
+    else if (!/^[A-Za-z\s'-]+$/.test(formData.fullName))
+      newErrors.fullName = "Please enter a valid name";
     // const phoneRegex = /^\(\d{3}\)\d{3}\d{5}$/;
     if (!formData.phone) newErrors.phone = "Phone number is required";
     else if (formData.phone.length <= 7)
-      newErrors.phone = "Phone number must be at least 8 numbers"
+      newErrors.phone = "Phone number must be at least 8 numbers";
     // else if (!phoneRegex.test(formData.phone))
     //   newErrors.phone = "Format: (123) 456-7890";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -55,70 +57,99 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      try {
-        setIsBooking(true);
-        const response = await fetch("/api/send", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.fullName,
-            email: formData.email,
-            service: formData.serviceType,
-            date: `${formData.preferredDate} ${formData.preferredTime}`,
-            message: `
-Phone: ${formData.phone}
-Address: ${formData.address}
-Special Instructions: ${formData.instructions || "None"}
-            `.trim(),
-          }),
-        });
+    if (!validate()) {
+      return;
+    }
 
-        const data = await response.json();
+    try {
+      setIsBooking(true);
 
-        if (!response.ok) {
-          throw new Error(data.error || "Failed to submit booking");
-        }
+      // Send email notification
+      const sendResponse = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          service: formData.serviceType,
+          date: `${formData.preferredDate} ${formData.preferredTime}`,
+          message: `
+            Phone: ${formData.phone}
+            Address: ${formData.address}
+            Special Instructions: ${formData.instructions || "None"}
+          `.trim(),
+        }),
+      });
 
-        // Clear form on success
-        setFormData({
-          fullName: "",
-          phone: "",
-          email: "",
-          serviceType: "",
-          preferredDate: "",
-          preferredTime: "",
-          address: "",
-          instructions: "",
-        });
-
-        toast.success(
-          "Booking submitted successfully! We will contact you shortly.",
-          {
-            style: {
-              border: "1px solid bg-[#0A58A2]",
-              padding: "16px",
-              color: "#0A58A2",
-            },
-            iconTheme: {
-              primary: "#0A58A2",
-              secondary: "#ffffff",
-            },
-          }
-        );
-      } catch (error) {
-        toast.error(
-          error.message || "Failed to submit booking. Please try again."
-        );
-      } finally {
-        setIsBooking(false);
+      const sendJson = await sendResponse.json();
+      if (!sendResponse.ok) {
+        throw new Error(sendJson.error || "Failed to submit booking");
       }
+
+      // Also persist booking to Google Sheets (best-effort)
+      try {
+        const bookingPayload = {
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          date: `${formData.preferredDate} ${formData.preferredTime}`,
+          service: formData.serviceType,
+          address: formData.address,
+          notes: formData.instructions || "None",
+        };
+        const bookingRes = await fetch("/api/booking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(bookingPayload),
+        });
+        // Don't block success toast if this fails; log silently via toast
+        if (!bookingRes.ok) {
+          const bookingErr = await bookingRes.json().catch(() => ({}));
+          toast.error(bookingErr.error || "Failed to save booking record");
+        }
+      } catch (bookingError) {
+        toast.error(bookingError.message || "Failed to save booking record");
+      }
+
+      // Clear form on success
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        serviceType: "",
+        preferredDate: "",
+        preferredTime: "",
+        address: "",
+        instructions: "",
+      });
+
+      toast.success(
+        "Booking submitted successfully! We will contact you shortly.",
+        {
+          style: {
+            border: "1px solid bg-[#0A58A2]",
+            padding: "16px",
+            color: "#0A58A2",
+          },
+          iconTheme: {
+            primary: "#0A58A2",
+            secondary: "#ffffff",
+          },
+        }
+      );
+    } catch (error) {
+      toast.error(
+        error.message || "Failed to submit booking. Please try again."
+      );
+    } finally {
+      setIsBooking(false);
     }
   };
 
-  const inputClass ="w-full onFocus:border-[#F3F9FF] bg-white border border-gray-300 p-2 rounded";
+  const inputClass =
+    "w-full onFocus:border-[#F3F9FF] bg-white border border-gray-300 p-2 rounded";
 
   return (
     <section className="w-full my-8">
