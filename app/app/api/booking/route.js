@@ -11,12 +11,12 @@ export async function POST(req) {
 
     const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY ?? "";
     const clientEmail = process.env.GOOGLE_CLIENT_EMAIL ?? "";
-    if (!rawPrivateKey || !clientEmail) {
-      return NextResponse.json(
-        { error: "Missing GOOGLE_PRIVATE_KEY or GOOGLE_CLIENT_EMAIL env var" },
-        { status: 500 }
-      );
-    }
+    // if (!rawPrivateKey || !clientEmail) {
+    //   return NextResponse.json(
+    //     { error: "Missing GOOGLE_PRIVATE_KEY or GOOGLE_CLIENT_EMAIL env var" },
+    //     { status: 500 }
+    //   );
+    // }
 
     // Normalize multiline private key from env
     const privateKey = rawPrivateKey
