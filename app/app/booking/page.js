@@ -246,13 +246,15 @@ const Page = () => {
                 }`}
               >
                 <option>Select a service</option>
-                <option value="home">Home Cleaning</option>
-                <option value="regular">Regular Cleaning</option>
-                <option value="office">Office Cleaning</option>
-                <option value="move">Move In/Out Cleaning</option>
-                <option value="laundry">Laundry Pick Up</option>
-                <option value="fumigation">Fumigation Service</option>
-                <option value="deep">Deep Cleaning</option>
+                <option value="Home Cleaning">Home Cleaning</option>
+                <option value="Regular Cleaning">Regular Cleaning</option>
+                <option value="Office Cleaning">Office Cleaning</option>
+                <option value="Move In/Out Cleaning">
+                  Move In/Out Cleaning
+                </option>
+                <option value="Laundry Pick Up">Laundry Pick Up</option>
+                <option value="Fumigation Service">Fumigation Service</option>
+                <option value="Deep Cleaning">Deep Cleaning</option>
               </select>
               {error.serviceType && (
                 <p className="text-red-500 text-sm mt-1">{error.serviceType}</p>
