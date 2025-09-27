@@ -1,13 +1,40 @@
-import { EmailTemplate } from "@/components/email-template";
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+import { ContactForm } from "@/components/ContactFormEmail";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validateFormData(formData) {
+  if (!formData || typeof formData !== "object") {
+    return {
+      errors: { form: "Invalid form payload" },
+      data: null,
+    };
+  }
+
+  const trimmed = {
+    name: String(formData.name || "").trim(),
+    email: String(formData.email || "").trim(),
+    subject: String(formData.subject || "").trim(),
+    message: String(formData.message || "").trim(),
+  };
+
+  const errors = {};
+
+  if (!trimmed.name) errors.name = "Name is required";
+  if (!trimmed.email) errors.email = "Email is required";
+  else if (!emailRegex.test(trimmed.email)) errors.email = "Enter a valid email";
+  if (!trimmed.subject) errors.subject = "Subject is required";
+  if (!trimmed.message) errors.message = "Message is required";
+
+  return { errors, data: trimmed };
+}
 
 async function sendEmail(formData) {
   if (!process.env.RESEND_API_KEY) {
     return NextResponse.json(
-      { error: "Resend API key is not configured" },
+      { error: "Email service not configured" },
       { status: 500 }
     );
   }
@@ -16,13 +43,13 @@ async function sendEmail(formData) {
     const { data, error } = await resend.emails.send({
       from: "New Enquiry <onboarding@resend.dev>",
       to: ["totaltouchservices@gmail.com"],
-      subject: `New Booking Request from ${formData.name}`,
-      react: EmailTemplate(formData),
+      subject: `Enquiry From Website: ${formData.subject}`,
+      react: ContactForm(formData),
+      reply_to: formData.email,
     });
 
     if (error) {
-      console.error("Error sending email:", error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
+      return NextResponse.json({ error: error.message }, { status: 502 });
     }
 
     return NextResponse.json(
@@ -33,7 +60,6 @@ async function sendEmail(formData) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Caught error:", error);
     return NextResponse.json(
       {
         error: error.message || "Failed to send email",
@@ -45,10 +71,15 @@ async function sendEmail(formData) {
 
 export async function POST(request) {
   try {
-    const formData = await request.json();
-    return sendEmail(formData);
+    const body = await request.json();
+    const { errors, data } = validateFormData(body);
+
+    if (Object.keys(errors).length > 0) {
+      return NextResponse.json({ error: "Validation failed", details: errors }, { status: 400 });
+    }
+
+    return sendEmail(data);
   } catch (error) {
-    console.error("Error processing request:", error);
     return NextResponse.json(
       {
         error: "Invalid request body",
