@@ -82,7 +82,19 @@ const Page = () => {
         throw new Error(responseBody.error || "Failed to send message");
       }
 
-      toast.success("Thanks! We'll be in touch shortly.");
+      toast.success("Thanks! We'll be in touch shortly.",
+         {
+          style: {
+            border: "1px solid bg-[#0A58A2]",
+            padding: "16px",
+            color: "#0A58A2",
+          },
+          iconTheme: {
+            primary: "#0A58A2",
+            secondary: "#ffffff",
+          },
+        }
+      );
       setFormData(createInitialFormState());
       setError({});
     } catch (err) {
