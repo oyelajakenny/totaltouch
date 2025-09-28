@@ -20,17 +20,34 @@ const serviceNames = {
   deep: "Deep Cleaning",
 };
 
+const parseMessageDetails = (message) => {
+  if (!message || typeof message !== "string") {
+    return {};
+  }
+
+  return message
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .reduce((acc, line) => {
+      const [label, ...rest] = line.split(":");
+      if (!label || rest.length === 0) {
+        return acc;
+      }
+
+      acc[label.trim().toLowerCase()] = rest.join(":").trim();
+      return acc;
+    }, {});
+};
 export function EmailTemplate({ name, email, service, date, message }) {
   // Format the service name
   const serviceName = serviceNames[service] || service;
 
-  // Parse the message to extract phone, address, and instructions
-  const messageLines = message.split("\n");
-  const phone = messageLines[0].replace("Phone:", "").trim();
-  const address = messageLines[1].replace("Address:", "").trim();
-  const instructions = messageLines[2]
-    .replace("Special Instructions:", "")
-    .trim();
+  const messageDetails = parseMessageDetails(message);
+  const phone = messageDetails["phone"] || "";
+  const address = messageDetails["address"] || "";
+  const serviceDetail = messageDetails["service detail"] || "";
+  const instructions = messageDetails["special instructions"] || "";
 
   return (
     <Html>
@@ -60,9 +77,21 @@ export function EmailTemplate({ name, email, service, date, message }) {
             <Text style={text}>
               <strong>Booking Details</strong>
             </Text>
-            <Text style={text}><span style={span}>Service:</span> {serviceName}</Text>
-            <Text style={text}> <span style={span}>Date & Time:</span> {date}</Text>
-            <Text style={text}><span style={span}>Address:</span> {address}</Text>
+            <Text style={text}>
+              <span style={span}>Service:</span> {serviceName}
+            </Text>
+            {serviceDetail && (
+              <Text style={text}>
+                <span style={span}>Service Detail:</span> {serviceDetail}
+              </Text>
+            )}
+            <Text style={text}>
+              {" "}
+              <span style={span}>Date & Time:</span> {date}
+            </Text>
+            <Text style={text}>
+              <span style={span}>Address:</span> {address}
+            </Text>
           </Section>
 
           {instructions && instructions !== "None" && (
@@ -76,7 +105,8 @@ export function EmailTemplate({ name, email, service, date, message }) {
           {/* Footer Section */}
           <Section style={footerSection}>
             <Text style={footerText}>
-              {new Date().getFullYear} 2025 TotalTouch Cleaning. All rights reserved.
+              {new Date().getFullYear} 2025 TotalTouch Cleaning. All rights
+              reserved.
             </Text>
             <Text style={footerText}>
               Follow us:{" "}
@@ -165,3 +195,5 @@ const linkStyle = {
   textDecoration: "none",
   margin: "0 4px",
 };
+
+
