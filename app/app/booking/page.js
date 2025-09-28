@@ -14,10 +14,13 @@ const SERVICE_DETAIL_CONFIG = {
     type: "select",
     required: true,
     options: [
-      { value: "1-2 rooms", label: "1-2 rooms" },
-      { value: "3-4 rooms", label: "3-4 rooms" },
-      { value: "5-6 rooms", label: "5-6 rooms" },
-      { value: "7+ rooms", label: "7+ rooms" },
+      { value: "A Room Self", label: "A Room Self" },
+      { value: "Mini Flat", label: "Mini Flat" },
+      { value: "2 Bedrooms Flat", label: "2 Bedrooms Flat" },
+      { value: "3 Bedrooms Flat", label: "3 Bedrooms Flat" },
+      { value: "4+ rooms", label: "4+ rooms" },
+      { value: "Duplex", label: "Duplex" },
+      { value: "Others", label: "Others" },
     ],
   },
   "Regular Cleaning": {
@@ -56,6 +59,7 @@ const SERVICE_DETAIL_CONFIG = {
       { value: "Studio / 1 Bedroom", label: "Studio / 1 Bedroom" },
       { value: "2-3 Bedroom", label: "2-3 Bedroom" },
       { value: "4+ Bedroom", label: "4+ Bedroom" },
+      { value: "Duplex", label: "Duplex" },
     ],
   },
   "Laundry Pick Up": {

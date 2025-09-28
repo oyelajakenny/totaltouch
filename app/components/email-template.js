@@ -82,7 +82,7 @@ export function EmailTemplate({ name, email, service, date, message }) {
             </Text>
             {serviceDetail && (
               <Text style={text}>
-                <span style={span}>Service Detail:</span> {serviceDetail}
+                <span style={span}>Service Details:</span> {serviceDetail}
               </Text>
             )}
             <Text style={text}>
@@ -111,13 +111,13 @@ export function EmailTemplate({ name, email, service, date, message }) {
             <Text style={footerText}>
               Follow us:{" "}
               <a
-                href="https://facebook.com/totaltouchcleaning"
+                href="https://facebook.com/"
                 style={linkStyle}
               >
                 Facebook
               </a>
               {" | "}
-              <a href="https://twitter.com/totaltouchclean" style={linkStyle}>
+              <a href="https://twitter.com/" style={linkStyle}>
                 Twitter
               </a>
               {" | "}
