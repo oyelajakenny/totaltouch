@@ -1,46 +1,98 @@
 "use client";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { contact } from "../../constants";
 
+const createInitialFormState = () => ({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const Page = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email:"",
-    subject: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting]  = useState(false)
+  const [formData, setFormData] = useState(createInitialFormState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState({});
 
   const validate = () => {
     const newErrors = {};
-    if(!formData.name) newErrors.name = "Name is required";
-    else if (formData.name.length < 2) newErrors.name = "Name can't be less than 2 characters"
-    if(!formData.subject) newErrors.subject = "Subject is required"
-    if(!formData.email) newErrors.email = "Please enter an email"
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter a valid email"
-      if (!formData.message) newErrors.message = "Message is required";
-      else if(formData.message.length <= 10) newErrors.message = "Message too short, message must be more than 10 characters"
-setError(newErrors)
-return newErrors;
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedSubject = formData.subject.trim();
+    const trimmedMessage = formData.message.trim();
+
+    if (!trimmedName) newErrors.name = "Name is required";
+    else if (trimmedName.length < 2)
+      newErrors.name = "Name can't be less than 2 characters";
+
+    if (!trimmedSubject) newErrors.subject = "Subject is required";
+
+    if (!trimmedEmail) newErrors.email = "Please enter an email";
+    else if (!emailPattern.test(trimmedEmail))
+      newErrors.email = "Please enter a valid email";
+
+    if (!trimmedMessage) newErrors.message = "Message is required";
+    else if (trimmedMessage.length <= 10)
+      newErrors.message = "Message too short, message must be more than 10 characters";
+
+    setError(newErrors);
+    return newErrors;
   };
 
-  const handleChange = (e)=>{
-    e.preventDefault()
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-if (error[name]) {
-  setError((prev) => ({ ...prev, [name]: "" }));
-}
-  }
-
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-    if (validate()){
-
+    if (error[name]) {
+      setError((prev) => {
+        const { [name]: _removed, ...rest } = prev;
+        return rest;
+      });
     }
-  }
-const inputClass = "p-3 rounded-md border border-gray-300 w-full";
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      const payload = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+      };
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const responseBody = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(responseBody.error || "Failed to send message");
+      }
+
+      toast.success("Thanks! We'll be in touch shortly.");
+      setFormData(createInitialFormState());
+      setError({});
+    } catch (err) {
+      toast.error(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const inputClass = "p-3 rounded-md border border-gray-300 w-full";
 
   return (
     <div className="conatiner mx-auto flex flex-col justify-start items-center">
@@ -50,13 +102,6 @@ const inputClass = "p-3 rounded-md border border-gray-300 w-full";
           Ready to experience the Total Touch difference? <br></br> Contact us
           today for a free estimate or to schedule your service.
         </p>
-        {/* <div className="w-full h-auto">
-          <iframe
-            src="https://www.google.com/maps/d/u/0/embed?mid=192jwuPAknDQ7kl6k10TdklpmKc8aA7k&ehbc=2E312F&noprof=1"
-            width="100%"
-            height="480"
-          ></iframe>
-        </div> */}
       </div>
       <div className="container  w-full flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-start px-4 lg:px-40 ">
         <div className="w-full  lg:w-1/2 m-7 grid grid-cols-1 sm:grid-cols-2 gap-3 ">
@@ -89,6 +134,7 @@ const inputClass = "p-3 rounded-md border border-gray-300 w-full";
               value={formData.name}
               onChange={handleChange}
               className={`${inputClass} ${error.name ? "border border-red-500" : ""}  `}
+              disabled={isSubmitting}
             />
             {error.name && (
               <p className="text-red-500 text-sm ">{error.name}</p>
@@ -100,6 +146,7 @@ const inputClass = "p-3 rounded-md border border-gray-300 w-full";
               value={formData.email}
               onChange={handleChange}
               className={`${inputClass} ${error.email ? "border border-red-500" : ""}  `}
+              disabled={isSubmitting}
             />
             {error.email && (
               <p className="text-red-500 text-sm ">{error.email}</p>
@@ -111,6 +158,7 @@ const inputClass = "p-3 rounded-md border border-gray-300 w-full";
               placeholder="Subject"
               onChange={handleChange}
               className={`${inputClass} ${error.subject ? "border border-red-500" : ""}  `}
+              disabled={isSubmitting}
             />
             {error.subject && (
               <p className="text-red-500 text-sm">{error.subject}</p>
@@ -120,16 +168,18 @@ const inputClass = "p-3 rounded-md border border-gray-300 w-full";
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className={`${inputClass} ${error.message? "border-red-500" : "" }`}
+              className={`${inputClass} ${error.message ? "border-red-500" : "" } h-32`}
+              disabled={isSubmitting}
             />
             {error.message && (
               <p className="text-red-500 text-sm">{error.message}</p>
             )}
             <button
               type="submit"
-              className=" w-full bg-[#0A58A2] text-white p-3 rounded-md  mx-auto"
+              className=" w-full bg-[#0A58A2] text-white p-3 rounded-md  mx-auto disabled:opacity-70 disabled:cursor-not-allowed"
+              disabled={isSubmitting}
             >
-              Submit
+              {isSubmitting ? "Sending..." : "Submit"}
             </button>
           </form>
         </div>
