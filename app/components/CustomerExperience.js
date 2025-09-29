@@ -1,9 +1,17 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
+import { motion } from "framer-motion";
 
 const CustomerExperience = () => {
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-20 p-5">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-20 p-5"
+    >
       <div className=" rounded-lg h-full w-full overflow-hidden">
         <Image
           src={"/images/experience.png"}
@@ -50,7 +58,7 @@ const CustomerExperience = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
