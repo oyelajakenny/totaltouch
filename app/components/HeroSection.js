@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const HeroSection = () => {
   return (
-    <div className="container mx-auto flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between py-12 px-6 ">
+    <div className="container mx-auto flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between py-12 px-6 animate-bounce ">
       <div className="w-full lg:w-1/2 flex flex-col items-center md:items-start justify-center space-y-6 md:space-y-10 md:pr-16 text-center md:text-left">
         <h1 className="font-bold  text-2xl sm:text-4xl md:text-5xl md:text-center lg:text-7xl lg:text-left">
           Spotless <span className="text-[#0A58A2]">Homes</span> &{" "}
