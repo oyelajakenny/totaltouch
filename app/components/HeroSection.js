@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import { HiMiniArrowSmallRight } from "react-icons/hi2";
@@ -21,9 +22,9 @@ import Link from 'next/link';
 const HeroSection = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
       className="container mx-auto flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between py-12 px-6 "
     >
       <div className="w-full lg:w-1/2 flex flex-col items-center md:items-start justify-center space-y-6 md:space-y-10 md:pr-16 text-center md:text-left">
