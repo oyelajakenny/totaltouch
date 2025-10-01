@@ -1,9 +1,18 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
+import {motion} from "framer-motion"
 
-export const BookServiceCard = ({book}) => {
+export const BookServiceCard = ({book, id}) => {
   return (
-    <div className="relative w-full  border-gray-300 rounded-lg flex flex-col justify-between m-2">
+    <motion.div
+      key={id}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: id * 0.2 }}
+      viewport={{ once: true }}
+      className="relative w-full  border-gray-300 rounded-lg flex flex-col justify-between m-2"
+    >
       <div className="w-full  overflow-hidden rounded-lg">
         <img
           src={book.img}
@@ -17,6 +26,6 @@ export const BookServiceCard = ({book}) => {
           <a href={book.url}>Learn More</a>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
