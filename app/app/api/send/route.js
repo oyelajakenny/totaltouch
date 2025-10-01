@@ -1,4 +1,5 @@
 import { EmailTemplate } from "@/components/email-template";
+import { BookingConfirmationEmail } from "@/components/booking-confirmation-email";
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
@@ -12,23 +13,56 @@ async function sendEmail(formData) {
     );
   }
 
+  const { name, email } = formData || {};
+  if (!name || !email) {
+    return NextResponse.json(
+      { error: "Missing required fields: name or email" },
+      { status: 400 }
+    );
+  }
+
   try {
-    const { data, error } = await resend.emails.send({
-      from: "New Booking <onboarding@resend.dev>",
+    // 1) Notify internal team
+    const { data: adminData, error: adminError } = await resend.emails.send({
+      from: "New Booking <send@totaltouchcleaning.com.ng>",
       to: ["totaltouchservices@gmail.com"],
       subject: `New Booking Request from ${formData.name}`,
       react: EmailTemplate(formData),
+      reply_to: email,
     });
 
-    if (error) {
-      console.error("Error sending email:", error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (adminError) {
+      console.error("Error sending admin email:", adminError);
+      return NextResponse.json({ error: adminError.message }, { status: 500 });
+    }
+
+    // 2) Send confirmation to client
+    const { data: clientData, error: clientError } = await resend.emails.send({
+      from: "TotalTouch Cleaning <send@totaltouchcleaning.com.ng>",
+      to: [email],
+      subject: "We received your booking – TotalTouch Cleaning",
+      react: BookingConfirmationEmail(formData),
+      reply_to: "totaltouchservices@gmail.com",
+    });
+
+    if (clientError) {
+      console.error("Error sending client confirmation:", clientError);
+      // Return success for the admin mail but include a warning
+      return NextResponse.json(
+        {
+          message:
+            "Booking email sent to team, but failed to send client confirmation.",
+          data: { adminData },
+          warning: clientError.message,
+        },
+        { status: 200 }
+      );
     }
 
     return NextResponse.json(
       {
-        message: "Email sent successfully",
-        data,
+        message: "Emails sent successfully (team + client confirmation).",
+        data: { adminData, clientData },
       },
       { status: 200 }
     );
