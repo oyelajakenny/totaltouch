@@ -34,9 +34,9 @@ const HeroSection = () => {
           <span className="text-[#0A58A2]">Laundry</span>
         </h1>
         <p className="text-base sm:text-lg md:text-lg md:text-center lg:text-left text-gray-700">
-          Experience the perfect clean with our eco-friendly solutions. From
-          home cleaning to laundry pickup & delivery - we&lsquo;ve got you
-          covered!
+          cleaning and laundry solutions designed for busy people like you. From
+          one-time deep cleaning to recurring laundry pickups, we make life
+          easier and cleaner.
         </p>
         <div className="w-full flex justify-center lg:justify-start">
           <div className="flex justify-center items-center gap-3 w-full sm:w-auto ">
@@ -47,7 +47,7 @@ const HeroSection = () => {
             </Link>
 
             <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md hover:scale-105   ">
-              Learn More
+              Get A Free Quote
             </button>
           </div>
         </div>
