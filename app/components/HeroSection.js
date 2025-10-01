@@ -45,10 +45,11 @@ const HeroSection = () => {
                 Book A Service <HiMiniArrowSmallRight size={25} />
               </button>
             </Link>
-
-            <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md hover:scale-105   ">
+<Link href="/contact-us">
+            <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md cursor-pointer hover:scale-105   ">
               Get A Free Quote
             </button>
+            </Link>
           </div>
         </div>
       </div>
