@@ -1,24 +1,32 @@
-"use client"
-import React from 'react'
-import { services } from '../constants/index.js'
-import { BookServiceCard } from './BookServiceCard'
+"use client";
+import React from "react";
+import { services } from "../constants/index.js";
+import { BookServiceCard } from "./BookServiceCard";
 import { motion } from "framer-motion";
-import { MdSlowMotionVideo } from 'react-icons/md';
+import { MdSlowMotionVideo } from "react-icons/md";
+import { Link } from "next/link";
 
 const BookService = () => {
   return (
     <div className="container mx-auto my-20">
-      <div className="px-6">
-        <p className="font-semibold text-2xl text-[#0A58A2]">BOOK A SERVICE</p>
-        <h3 className=" text-3xl md:text-5xl font-bold leading-tight">
-          Cleaning & Laundry Services<br></br> That Fit Your Busy Schedule
-        </h3>
+      <div className="px-6 flex justify-between items-end">
+        <div>
+          <p className="font-semibold text-2xl text-[#0A58A2]">
+            BOOK A SERVICE
+          </p>
+          <h3 className=" text-3xl md:text-5xl font-bold leading-tight">
+            Cleaning & Laundry Services<br></br> That Fit Your Busy Schedule
+          </h3>
+        </div>
+       
+        <button className="bg-[#0A58A2] px-5 py-2 text-sm font-semibold text-white rounded cursor-pointer">View All Services</button>
+        
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay:  0.9 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
         viewport={{ once: true }}
         className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 px-6"
       >
@@ -28,6 +36,6 @@ const BookService = () => {
       </motion.div>
     </div>
   );
-}
+};
 
-export default BookService
+export default BookService;
