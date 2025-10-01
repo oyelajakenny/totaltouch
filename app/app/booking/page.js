@@ -301,7 +301,7 @@ const Page = () => {
       setFormData(createInitialFormState());
       setError({});
       toast.success(
-        "Booking submitted successfully! We will contact you shortly.",
+        "Booking submitted successfully! Please check your email for booking confirmation 🎉.",
         {
           style: {
             border: "1px solid bg-[#0A58A2]",
@@ -315,7 +315,7 @@ const Page = () => {
         }
       );
     } catch (err) {
-      toast.error(err.message || "Failed to submit booking. Please try again.");
+      toast.error(err.message || "Failed to submit booking. Please try again😓.");
     } finally {
       setIsBooking(false);
     }
