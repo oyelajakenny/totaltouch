@@ -13,27 +13,27 @@ import path from "path";
 export const home = [
   {
     icon: <FaHome />,
-    title: "HOME CLEANING",
+    title: "CLEANING SERVICES",
     description:
-      "Professional home cleaning services to keep your space spotless.",
+      "Professional home and general cleaning services to keep your space spotless.",
   },
   {
     icon: <RiHomeOfficeFill />,
-    title: "OFFICE CLEANING",
+    title: "FUMIGATION SERVICES",
     description:
-      "Reliable office cleaning services for a productive work environment.",
+      "Reliable fumigation services to ensure a pest-free and healthy environment.",
   },
   {
     icon: <MdLocalLaundryService />,
     title: "LAUNDRY SERVICES",
     description:
-      "Convenient laundry services to take care of your clothes with care.",
+      "Convenient professional laundry and dry cleaning services for your everyday needs. ",
   },
   {
     icon: <LuConstruction />,
     title: "POST-CONSTRUCTION CLEANING",
     description:
-      "Thorough post-construction cleaning to make your new space shine.",
+      "Thorough post-construction cleaning to make your new space shine and odor free. ",
   },
 ];
 
@@ -41,26 +41,26 @@ export const services = [
   {
     id: 1,
     img: "images/home-cleaning.png",
-    title: "Home Cleaning",
-    url: "/home-cleaning",
+    title: "Cleaning Services",
+    url: "/booking",
   },
   {
     id: 2,
     img: "images/office-cleaning.png",
-    title: "Office Cleaning",
-    url: "/office-cleaning",
+    title: "Fumigation Services",
+    url: "/booking",
   },
   {
     id: 3,
     img: "images/laundry-service.png",
     title: "Laundry Services",
-    url: "/laundry-services",
+    url: "/booking",
   },
   {
     id: 4,
     img: "images/post-construction.png",
     title: "Post-Construction Cleaning",
-    url: "/post-construction-cleaning",
+    url: "/booking",
   },
 ];
 
