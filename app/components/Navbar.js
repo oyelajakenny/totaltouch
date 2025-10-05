@@ -28,14 +28,14 @@ const Navbar = () => {
           <Link href={"/"}>
             <Image src={"/Logo.png"} alt="Logo" width={100} height={50} />{" "}
           </Link>
-          <nav className=" hidden md:hidden  lg:flex space-x-7 text-lg font-regular text-gray-600 ">
+          <nav className=" hidden md:hidden  lg:flex space-x-7 text-[14px] font-regular text-gray-600 ">
             <Link href="/" className="hover:text-blue-600">
               Home
             </Link>
             <Link href="/about-us" className="hover:text-blue-600">
               About Us
             </Link>
-            <Link href="/service" className="hover:text-blue-600">
+            <Link href="/our-services" className="hover:text-blue-600">
               Our Services
             </Link>
             <Link href="/service" className="hover:text-blue-600">
