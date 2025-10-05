@@ -236,7 +236,7 @@ const Footer = () => {
       </div>  */}
       <p className="text-white font-normal text-sm text-center mt-10 px-4">
         &copy; Copyright Total Touch Services {new Date().getFullYear()} - Terms
-        & Conditions | Privacy Policy
+        & Conditions | Privacy Policy | RC-8061473
       </p>
     </footer>
   );
