@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { contact } from "../../constants";
+import CTA from "../../components/CTA";
 
 const createInitialFormState = () => ({
   name: "",
@@ -196,6 +197,7 @@ const Page = () => {
           </form>
         </div>
       </div>
+      <CTA />
     </div>
   );
 };
