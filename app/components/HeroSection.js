@@ -54,14 +54,14 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/2 flex justify-center mb-6 md:mb-0">
+      <div className="w-full lg:w-1/2 flex justify-center mb-6 md:mb-0 rounded-full">
         <Image
-          src={"/images/hero-image.png"}
+          src={"/images/hero.png"}
           alt="Total Touch Cleaning and Laundry Services"
           loading="lazy"
           width={800}
           height={500}
-          className="w-full max-w-md md:max-w-none h-auto object-contain"
+          className="w-full max-w-md md:max-w-none h-auto object-contain rounded-full"
         />
       </div>
     </motion.div>
