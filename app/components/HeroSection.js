@@ -41,7 +41,7 @@ const HeroSection = () => {
         <div className="w-full flex justify-center lg:justify-start">
           <div className="flex justify-center items-center gap-3 w-full sm:w-auto ">
             <Link href="/booking">
-              <button className="bg-[#0A58A2] text-white flex items-center gap-2  py-2 px-8 rounded-md shadow-md  sm:w-auto hover:bg-blue-900 hover:scale-105 transition-transform cursor-pointer ">
+              <button className="bg-[#0A58A2] text-white flex items-center gap-2  py-2 px-8 rounded-md shadow-md  sm:w-auto hover:bg-blue-900 hover:scale-105 transition-transform cursor-pointer sm:text-[12px]">
                 Book A Service <HiMiniArrowSmallRight size={25} />
               </button>
             </Link>
