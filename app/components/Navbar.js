@@ -50,12 +50,11 @@ const Navbar = () => {
         <div className="hidden lg:flex  space-x-4">
           <div className="flex items-center space-x-2">
             <MdOutlinePhone />
-            <p className=" font-normal text-gray-500 text-sm  cursor-pointer">
-              08149562597
+            <p className=" font-semibold text-gray-500 text-lg  cursor-pointer">
+              08125629484
             </p>
           </div>
           <Link href="/booking">
-           
             <button className="bg-[#0A58A2] py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700">
               Book Now
             </button>
@@ -98,7 +97,7 @@ const Navbar = () => {
                 About Us
               </Link>
               <Link
-                href="/service"
+                href="/our-services"
                 onClick={closeMenu}
                 className="hover:bg-blue-100 w-full rounded-md px-2 py-1"
               >
@@ -124,16 +123,18 @@ const Navbar = () => {
                 <div className="flex justify-center items-center space-x-2 w-full bg-blue-100 rounded-md px-2 py-3">
                   <MdOutlinePhone />
                   <p className=" font-semibold text-gray-500 text-lg  cursor-pointer">
-                    08149562597
+                    08125629484
                   </p>
                 </div>
-                <Link href="/booking"> <button
-                  className="bg-[#0A58A2] w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700"
-                  onClick={closeMenu}
-                >
-                  Book Now
-                </button></Link>
-               
+                <Link href="/booking">
+                  {" "}
+                  <button
+                    className="bg-[#0A58A2] w-full py-2 px-4 font-semibold text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-700"
+                    onClick={closeMenu}
+                  >
+                    Book Now
+                  </button>
+                </Link>
               </div>
               <div className="flex justify-center gap-5">
                 <a href="#">
