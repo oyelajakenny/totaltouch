@@ -34,7 +34,7 @@ const HeroSection = () => {
           <span className="text-[#0A58A2]">Laundry</span>
         </h1>
         <p className="text-base sm:text-lg md:text-lg md:text-center lg:text-left text-gray-700">
-          cleaning and laundry solutions designed for busy people like you. From
+          Cleaning and laundry solutions designed for busy people like you. From
           one-time deep cleaning to recurring laundry pickups, we make life
           easier and cleaner.
         </p>
@@ -59,9 +59,9 @@ const HeroSection = () => {
           src={"/images/hero.png"}
           alt="Total Touch Cleaning and Laundry Services"
           loading="lazy"
-          width={800}
-          height={500}
-          className="w-full max-w-md md:max-w-none h-auto object-contain rounded-full"
+          width={600}
+          height={400}
+          className=" w-full max-w-md md:max-w-none h-auto object-contain rounded-full"
         />
       </div>
     </motion.div>
