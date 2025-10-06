@@ -38,17 +38,17 @@ const HeroSection = () => {
           one-time deep cleaning to recurring laundry pickups, we make life
           easier and cleaner.
         </p>
-        <div className="w-full flex justify-center lg:justify-start">
-          <div className="flex justify-center items-center gap-3 w-full sm:w-auto ">
-            <Link href="/booking">
-              <button className="bg-[#0A58A2] text-white flex items-center gap-2  py-2 px-8 rounded-md shadow-md  sm:w-auto hover:bg-blue-900 hover:scale-105 transition-transform cursor-pointer sm:text-[12px]">
+        <div className="w-full flex justify-center lg:justify-start ">
+          <div className="flex flex-col lg:flex-row items-center gap-3 w-full">
+            <Link href="/booking" className="w-full lg:w-fit">
+              <button className="bg-[#0A58A2] text-white flex justify-center items-center gap-2  py-2 px-8 rounded-md shadow-md  w-full lg:w-fit hover:bg-blue-900 hover:scale-105 transition-transform cursor-pointer ">
                 Book A Service <HiMiniArrowSmallRight size={25} />
               </button>
             </Link>
-<Link href="/contact-us">
-            <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md cursor-pointer hover:scale-105   ">
-              Get A Free Quote
-            </button>
+            <Link href="/contact-us" className="w-full lg:w-fit">
+              <button className="bg-white text-[#0A58A2] border border- py-2 px-6 rounded-md shadow-md cursor-pointer hover:scale-105 w-full lg:w-fit transition-transform hover:bg-gray-100"> 
+                Get A Free Quote
+              </button>
             </Link>
           </div>
         </div>
