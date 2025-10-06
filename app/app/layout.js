@@ -27,25 +27,26 @@ export default function RootLayout({ children }) {
 
           <Footer />
         </ThemeProvider>
-        <Script
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
-          widget-id="aaaon8"
-          strategy="lazyOnload"
-        />
-        
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LSMC5FB1D1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LSMC5FB1D1');
-</script>
-
-      </body>
-    </html>
+    <Script
+      type="text/javascript"
+      src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+      id="aisensy-wa-widget"
+      widget-id="aaaon8"
+      strategy="lazyOnload"
+    />
+    <Script
+      strategy="afterInteractive"
+      src="https://www.googletagmanager.com/gtag/js?id=G-LSMC5FB1D1"
+    />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LSMC5FB1D1');
+      `}
+    </Script>
+  </body>
+</html>
   );
 }
