@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "react-hot-toast";
-
+import Script from "next/script";
 
 export const metadata = {
   title: "Total Touch Cleaning and Laundry Services",
@@ -27,6 +27,13 @@ export default function RootLayout({ children }) {
 
           <Footer />
         </ThemeProvider>
+        <Script
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          widget-id="aaaon8"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
