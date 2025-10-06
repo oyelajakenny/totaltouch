@@ -34,6 +34,17 @@ export default function RootLayout({ children }) {
           widget-id="aaaon8"
           strategy="lazyOnload"
         />
+        
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LSMC5FB1D1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LSMC5FB1D1');
+</script>
+
       </body>
     </html>
   );
