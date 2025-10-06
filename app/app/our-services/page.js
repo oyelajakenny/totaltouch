@@ -260,7 +260,7 @@ export default function Page() {
         <div className="grid items-center gap-6 sm:grid-cols-2 ">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-white">
-              Prefer a tailored plan?
+             Want a tailored plan?
             </h2>
             <p className="mt-2 text-white">
               Mix and match cleaning with laundry pick-up, and set a schedule
