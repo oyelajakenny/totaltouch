@@ -160,7 +160,7 @@ export const contact = [
   {
     icon: <FiPhone />,
     title: "Phone",
-    heading: "08149562597",
+    heading: "08125629484",
     description: "Available 24/7",
   },
   {
