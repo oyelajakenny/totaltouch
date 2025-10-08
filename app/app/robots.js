@@ -16,6 +16,6 @@ export default function robots() {
       },
     ],
     sitemap: "https://www.totaltouchcleaning.com.ng//sitemap.xml",
-    host: "https://www.totaltouchcleaning.com.ng/",
+    host: "https://www.totaltouchcleaning.com.ng",
   };
 }
