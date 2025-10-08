@@ -1,3 +1,6 @@
+"use client";
+import React from "react";
+
 import Link from "next/link";
 import { ShieldCheck, Leaf, Users2, ThumbsUp, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
@@ -5,7 +8,7 @@ import { motion } from "framer-motion";
 export const metadata = {
   title: "About Us | Total Touch Cleaning & Laundry Services",
   description:
-    "Learn about Total Touch Cleaning & Laundry Services - our mission, values, and the dedicated team providing top-notch cleaning and laundry solutions in Lagos.",
+    "Total Touch Cleaning & Laundry Services - our mission, values, and the dedicated team providing top-notch cleaning and laundry solutions in Lagos.",
 };
 
 // Optional: Organization schema for SEO
@@ -18,7 +21,7 @@ const orgJsonLd = {
   sameAs: [
     "https://www.facebook.com/yourpage",
     "https://www.instagram.com/yourpage",
-    "https://www.linkedin.com/company/yourpage",
+    
   ],
   description:
     "Professional home, office, deep cleaning and laundry pick-up & delivery with eco-friendly products and trusted staff.",
