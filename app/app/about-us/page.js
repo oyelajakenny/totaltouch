@@ -257,8 +257,7 @@ export default function AboutPage() {
       {/* Final CTA Banner */}
        <section
               className="mt-16 overflow-hidden rounded-3xl border border-slate-200  p-6 sm:p-10 bg-[#0A58A2] "
-              variants={ctaVariants}
-              initial="hidden"
+               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
