@@ -68,7 +68,7 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_UK", //
+    locale: "en_US", //
     url: "https://www.totaltouchcleaning.com.ng/",
     title: "Total Touch Cleaning and Laundry Services",
     description: "Professional Cleaning & Laundry Services in Lagos, Nigeria",
@@ -111,16 +111,16 @@ export default function RootLayout({ children }) {
             url: "https://www.totaltouchcleaning.com.ng/",
             logo: {
               "@type": "ImageObject",
-              url: "https://yourdomain.com/logo.png",
+              url: "https://www.totaltouchcleaning.com.ng/_next/image?url=%2FLogo.png&w=128&q=75",
               width: 800,
               height: 600,
             },
             description:
               "Cleaning and laundry company in Lagos, Nigeria. Designed for busy people like you. From one-time deep cleaning to recurring laundry pickups, we make life easier and cleaner.",
-            foundingDate: "2024", 
+            foundingDate: "2024",
             numberOfEmployees: {
               "@type": "QuantitativeValue",
-              value: "5-10", 
+              value: "5-10",
             },
             address: {
               "@type": "PostalAddress",
@@ -138,7 +138,16 @@ export default function RootLayout({ children }) {
                 name: "Lagos, Nigeria",
               },
             ],
-            serviceType: ["Home Cleaning", "Office Cleaning", "Laundry Services", "Deep Cleaning", "Carpet Cleaning", "Upholstery Cleaning", "Dry Cleaning", "Window Cleaning"],
+            serviceType: [
+              "Home Cleaning",
+              "Office Cleaning",
+              "Laundry Services",
+              "Deep Cleaning",
+              "Carpet Cleaning",
+              "Upholstery Cleaning",
+              "Dry Cleaning",
+              "Window Cleaning",
+            ],
           }),
         }}
       />
