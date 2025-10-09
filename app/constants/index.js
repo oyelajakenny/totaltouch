@@ -1,24 +1,31 @@
+import {FaHome} from "react-icons/fa";
+import {RiHomeOfficeFill} from "react-icons/ri";
+import {MdLocalLaundryService} from "react-icons/md";
+import {LuConstruction} from "react-icons/lu";
+
+
+
 export const home = [
   {
-    icon: "FaHome",
+    icon: <FaHome />,
     title: "CLEANING SERVICES",
     description:
       "Professional home and general cleaning services to keep your space spotless.",
   },
   {
-    icon: "RiHomeOfficeFill",
+    icon: <RiHomeOfficeFill />,
     title: "FUMIGATION SERVICES",
     description:
       "Reliable fumigation services to ensure a pest-free and healthy environment.",
   },
   {
-    icon: "MdLocalLaundryService",
+    icon: <MdLocalLaundryService />,
     title: "LAUNDRY SERVICES",
     description:
       "Convenient professional laundry and dry cleaning services for your everyday needs. ",
   },
   {
-    icon: "LuConstruction",
+    icon: <LuConstruction />,
     title: "POST-CONSTRUCTION CLEANING",
     description:
       "Thorough post-construction cleaning to make your new space shine and odor free. ",
