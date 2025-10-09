@@ -1,9 +1,8 @@
-"use client";
-import React from "react";
 
+import React from "react";
 import Link from "next/link";
 import { ShieldCheck, Leaf, Users2, ThumbsUp, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+
 
 export const metadata = {
   title: "About Us | Total Touch Cleaning & Laundry Services",
@@ -256,7 +255,7 @@ export default function AboutPage() {
    
 
       {/* Final CTA Banner */}
-       <motion.section
+       <section
               className="mt-16 overflow-hidden rounded-3xl border border-slate-200  p-6 sm:p-10 bg-[#0A58A2] "
               variants={ctaVariants}
               initial="hidden"
@@ -304,7 +303,7 @@ export default function AboutPage() {
                   </dl>
                 </div>
               </div>
-            </motion.section>
+            </section>
      
     </main>
   );
