@@ -3,6 +3,17 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { contact } from "../../constants";
 import CTA from "../../components/CTA";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineMail } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
+import { IoMdTime } from "react-icons/io";
+
+const ICONS = {
+  FiPhone,
+  MdOutlineMail,
+  CiLocationOn,
+  IoMdTime,
+};
 
 const createInitialFormState = () => ({
   name: "",
@@ -37,7 +48,8 @@ const Page = () => {
 
     if (!trimmedMessage) newErrors.message = "Message is required";
     else if (trimmedMessage.length <= 10)
-      newErrors.message = "Message too short, message must be more than 10 characters";
+      newErrors.message =
+        "Message too short, message must be more than 10 characters";
 
     setError(newErrors);
     return newErrors;
@@ -83,19 +95,17 @@ const Page = () => {
         throw new Error(responseBody.error || "Failed to send message");
       }
 
-      toast.success("Thanks! We'll be in touch shortly.",
-         {
-          style: {
-            border: "1px solid bg-[#0A58A2]",
-            padding: "16px",
-            color: "#0A58A2",
-          },
-          iconTheme: {
-            primary: "#0A58A2",
-            secondary: "#ffffff",
-          },
-        }
-      );
+      toast.success("Thanks! We'll be in touch shortly.", {
+        style: {
+          border: "1px solid bg-[#0A58A2]",
+          padding: "16px",
+          color: "#0A58A2",
+        },
+        iconTheme: {
+          primary: "#0A58A2",
+          secondary: "#ffffff",
+        },
+      });
       setFormData(createInitialFormState());
       setError({});
     } catch (err) {
@@ -125,7 +135,10 @@ const Page = () => {
                 className="flex justify-start items-center shadow-sm rounded-sm gap-2 p-2 lg:p-5 bg-white mb-5"
               >
                 <div className="p-2 w-fit rounded-lg bg-blue-200 text-blue-900">
-                  {items.icon}
+                  {(() => {
+                    const Icon = ICONS[items.icon];
+                    return Icon ? <Icon /> : null;
+                  })()}
                 </div>
                 <div className="flex flex-col justify-start items-start min-w-0 w-full">
                   <h1 className="font-semibold text-xs">{items.title}</h1>
@@ -181,7 +194,7 @@ const Page = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className={`${inputClass} ${error.message ? "border-red-500" : "" } h-32`}
+              className={`${inputClass} ${error.message ? "border-red-500" : ""} h-32`}
               disabled={isSubmitting}
             />
             {error.message && (
