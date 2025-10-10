@@ -99,13 +99,13 @@ const Footer = () => {
               <a href="#">
                 <FaTwitter className="size-7 text-white" />
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/share/17f78LvW7S/?mibextid=wwXIfr">
                 <FaFacebook className="size-7 text-white" />
               </a>
-              <a href="#">
+              <a href="https://api.whatsapp.com/send/?phone=2348125629484&text=Hello!%20I%27d+like+to+inquire+about+your+services&type=phone_number&app_absent=0">
                 <FaWhatsapp className="size-7 text-white" />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/totaltouch_ng/">
                 <FaInstagram className="size-7 text-white" />
               </a>
             </div>
