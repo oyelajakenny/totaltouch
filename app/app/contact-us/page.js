@@ -153,39 +153,70 @@ const Page = () => {
         </div>
         <div className="bg-white p-10 rounded-md shadow-md m-5 w-full lg:w-1/2">
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              className={`${inputClass} ${error.name ? "border border-red-500" : ""}  `}
-              disabled={isSubmitting}
-            />
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-slate-700 mb-1"
+              >
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
+                className={`${inputClass} ${error.name ? "border border-red-500" : ""}  `}
+                disabled={isSubmitting}
+              />
+            </div>
             {error.name && (
               <p className="text-red-500 text-sm ">{error.name}</p>
             )}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              className={`${inputClass} ${error.email ? "border border-red-500" : ""}  `}
-              disabled={isSubmitting}
-            />
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-slate-700 mb-1"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className={`${inputClass} ${error.email ? "border border-red-500" : ""}  `}
+                disabled={isSubmitting}
+              />
+            </div>
             {error.email && (
               <p className="text-red-500 text-sm ">{error.email}</p>
             )}
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              placeholder="Subject"
-              onChange={handleChange}
-              className={`${inputClass} ${error.subject ? "border border-red-500" : ""}  `}
-              disabled={isSubmitting}
-            />
+            <div>
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium text-slate-700 mb-1"
+              >
+                Subject
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className={`${inputClass} ${error.subject ? "border border-red-500" : ""} bg-white`}
+                disabled={isSubmitting}
+              >
+                <option value="">Select a subject</option>
+                <option value="General Enquiry">General inquiry</option>
+                <option value="Booking">Booking</option>
+                <option value="Pricing">Pricing</option>
+                <option value="Partnership">Partnership</option>
+              </select>
+            </div>
             {error.subject && (
               <p className="text-red-500 text-sm">{error.subject}</p>
             )}
