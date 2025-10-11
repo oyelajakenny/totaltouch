@@ -41,7 +41,7 @@ async function sendEmail(formData) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "New Enquiry <onboarding@resend.dev>",
+      from: "New Enquiry <send@totaltouchcleaning.com.ng>",
       to: ["totaltouchservices@gmail.com"],
       subject: `Enquiry From Website: ${formData.subject}`,
       react: ContactForm(formData),
