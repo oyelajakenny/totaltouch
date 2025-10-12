@@ -88,29 +88,28 @@ export default function AboutPage() {
           About Us
         </span>
         <h1 className="mt-3 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
-          Clean Spaces. Fresh Laundry. Happier Living.
+          About Total Touch Cleaning & Laundry Services
         </h1>
         <p className="mx-auto mt-3 max-w-3xl text-slate-600">
-          We’re a team of trained professionals delivering reliable cleaning and
-          premium laundry care. Our promise is simple: consistent quality,
-          eco-friendly methods, and service that puts you first.
+          Welcome to Total Touch Cleaning & Laundry Services, a trusted cleaning
+          and laundry company in Lagos, Nigeria, offering professional,
+          affordable, and eco-friendly cleaning solutions for homes, offices,
+          and commercial spaces. We provide home cleaning, office cleaning, deep
+          cleaning, post-construction cleaning, fumigation, and laundry pickup
+          services in Lagos, helping clients enjoy a cleaner, healthier
+          environment without stress.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/book"
-            className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
+            href="/booking"
+            className="rounded-xl bg-[#0A58A2] px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
           >
             Book a Cleaning
           </Link>
+
           <Link
-            href="/quote"
-            className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
-          >
-            Get a Quote
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100"
+            href="/contact-us"
+            className="rounded-xl bg-white border border-slate-300 px-5 py-2.5 text-sm font-medium text-[#0A58A2] hover:bg-slate-100"
           >
             Contact Us
           </Link>
@@ -118,30 +117,30 @@ export default function AboutPage() {
       </section>
 
       {/* Mission / Vision / Values */}
-      <section className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-semibold text-slate-900">Our Mission</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            To create cleaner, healthier homes and workplaces through dependable
-            service, attentive detail, and sustainable cleaning practices that
-            respect people and the planet.
+          <h2 className="text-lg font-semibold text-slate-900 text-center">Our Mission</h2>
+          <p className="mt-2 text-sm text-slate-600 text-center">
+            To redefine cleanliness in Nigeria by providing reliable and
+            affordable cleaning and laundry services that make homes and
+            businesses shine — while saving our clients time and effort.
           </p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-semibold text-slate-900">Our Vision</h2>
-          <p className="mt-2 text-sm text-slate-600">
-            To be the most trusted name in cleaning and laundry care—recognised
-            for quality, care, and community impact.
+          <h2 className="text-lg font-semibold text-slate-900 text-center">Our Vision</h2>
+          <p className="mt-2 text-sm text-slate-600 text-center">
+            To become the leading cleaning company in Lagos and across Nigeria,
+            recognized for excellence, innovation, and customer satisfaction.
           </p>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        {/* <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-900">Our Values</h2>
           <ul className="mt-2 space-y-2 text-sm text-slate-700">
             <li>• Integrity — we do what we say.</li>
             <li>• Reliability — we show up and deliver.</li>
             <li>• Respect — for your time, space, and belongings.</li>
           </ul>
-        </div>
+        </div> */}
       </section>
 
       {/* Experience / Trust Row */}
@@ -252,58 +251,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-   
-
       {/* Final CTA Banner */}
-       <section
-              className="mt-16 overflow-hidden rounded-3xl border border-slate-200  p-6 sm:p-10 bg-[#0A58A2] "
-               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="grid items-center gap-6 sm:grid-cols-2 ">
-                <div>
-                  <h2 className="text-2xl font-semibold tracking-tight text-white">
-                   Want a tailored plan?
-                  </h2>
-                  <p className="mt-2 text-white">
-                    Mix and match cleaning with laundry pick-up, and set a schedule
-                    that works for you.
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    <Link
-                      href="/booking"
-                      className="rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-[#0A58A2] hover:bg-slate-100"
-                    >
-                      Get a Free Quote
-                    </Link>
-                    <Link
-                      href="/contact-us"
-                      className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-100 hover:text-[#0A58A2]"
-                    >
-                      Talk to Us
-                    </Link>
-                  </div>
-                </div>
-                <div className="rounded-2xl border border-slate-200 bg-white p-5">
-                  <dl className="grid grid-cols-2 gap-4 text-sm text-slate-700 sm:grid-cols-3">
-                    <div>
-                      <dt className="font-medium">Availability</dt>
-                      <dd className="mt-1 text-slate-600">Mon-Sat, 8:00-20:00</dd>
-                    </div>
-                    <div>
-                      <dt className="font-medium">Response Time</dt>
-                      <dd className="mt-1 text-slate-600">Under 30 mins</dd>
-                    </div>
-                    <div>
-                      <dt className="font-medium">Coverage</dt>
-                      <dd className="mt-1 text-slate-600">Lagos State </dd>
-                    </div>
-                  </dl>
-                </div>
+      <section
+        className="mt-16 overflow-hidden rounded-3xl border border-slate-200  p-6 sm:p-10 bg-[#0A58A2] "
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="grid items-center gap-6 sm:grid-cols-2 ">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
+              Want a tailored plan?
+            </h2>
+            <p className="mt-2 text-white">
+              Mix and match cleaning with laundry pick-up, and set a schedule
+              that works for you.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                href="/booking"
+                className="rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-[#0A58A2] hover:bg-slate-100"
+              >
+                Get a Free Quote
+              </Link>
+              <Link
+                href="/contact-us"
+                className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-100 hover:text-[#0A58A2]"
+              >
+                Talk to Us
+              </Link>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <dl className="grid grid-cols-2 gap-4 text-sm text-slate-700 sm:grid-cols-3">
+              <div>
+                <dt className="font-medium">Availability</dt>
+                <dd className="mt-1 text-slate-600">Mon-Sat, 8:00-20:00</dd>
               </div>
-            </section>
-     
+              <div>
+                <dt className="font-medium">Response Time</dt>
+                <dd className="mt-1 text-slate-600">Under 30 mins</dd>
+              </div>
+              <div>
+                <dt className="font-medium">Coverage</dt>
+                <dd className="mt-1 text-slate-600">Lagos State </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
