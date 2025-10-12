@@ -329,7 +329,7 @@ const Page = () => {
       <div className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
         <div className="bg-blue-50 py-3 mb-2 rounded shadow">
           <h1 className="text-sm text-center ">
-            Fill out the form below and we&apos;ll get back to you with a
+            Fill out the booking form to make a booking and we&apos;ll get back to you with a
             confirmation
           </h1>
         </div>
