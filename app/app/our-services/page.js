@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Our Services | Total Touch Cleaning & Laundry",
+  title: "Our Services | Cleaning & Laundry Service in Lagos Nigeria",
   description:
-    "Fumigation, home & office cleaning, deep cleans, move in/out, post-construction cleaning, and laundry pick-up.",
+    "Fumigation, home & office cleaning, deep cleans, move in/out, post-construction cleaning, and laundry pick-up .",
   keywords: [
     "fumigation",
     "home cleaning",
@@ -10,15 +10,15 @@ export const metadata = {
     "laundry service",
   ],
   openGraph: {
-    title: "Our Services | Cleaning & Laundry",
+    title: "Cleaning & Laundry Service in Lagos Nigeria",
     description:
       "Fumigation, home & office cleaning, deep cleans, move in/out, post-construction cleaning, and laundry pick-up.",
     images: [
       {
-        url: "/services-og-image.jpg",
+        url: "/images/hero-image.png",
         width: 1200,
         height: 630,
-        alt: "An overview of our cleaning and laundry services",
+        alt: "Cleaning & Laundry Service in Lagos Nigeria",
       },
     ],
   },
