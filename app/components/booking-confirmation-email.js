@@ -61,7 +61,7 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
           <Section style={section}>
             <Text style={text}>
               If anything looks off, reply to this email or contact us at
-              totaltouchservices@gmail.com.
+              totaltouchservices@gmail.com. Call or WhatsApp 08125629484
             </Text>
           </Section>
 
@@ -73,7 +73,7 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
             <Text style={footerText}>
               Follow us:{" "}
               <a
-                href="https://instagram.com/totaltouchcleaning"
+                href="https://instagram.com/totaltouch_ng"
                 style={linkStyle}
               >
                 Instagram
