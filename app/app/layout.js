@@ -9,8 +9,9 @@ import Script from "next/script";
 export const metadata = {
   title: {
     default:
-      "Total Touch Cleaning - Cleaning & Laundry Services in Lagos, Nigeria",
-    template: "%s | Total Touch Cleaning and Laundry Services",
+      "Total Touch Cleaning & Laundry Services | Professional Cleaning & Laundry in Lagos, Nigeria",
+    template:
+      "%s | Total Touch Cleaning & Laundry Services | Professional Cleaning & Laundry in Lagos",
   },
   description:
     "Cleaning and laundry company in Lagos, Nigeria. Designed for busy people like you. From one-time deep cleaning to recurring laundry pickups, we make life easier and cleaner.",
