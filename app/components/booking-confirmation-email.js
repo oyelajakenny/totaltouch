@@ -60,7 +60,7 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
 
           <Section style={section}>
             <Text style={text}>
-              If anything looks off, reply to this email or contact us at
+              If anything looks off, contact us at
               totaltouchservices@gmail.com. Call or WhatsApp 08125629484
             </Text>
           </Section>
