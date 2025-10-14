@@ -61,7 +61,7 @@ const team = [
   },
   {
     name: "Michael Babatunde",
-    role: "Senior Cleaning Technician",
+    role: "Project Manager",
     photo: "/images/team/michael.jpg",
     bio: "Deep-clean specialist with expertise in post‑construction and move‑out restorations.",
   },
