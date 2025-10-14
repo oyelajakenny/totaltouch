@@ -56,7 +56,7 @@ const team = [
   {
     name: "Sulaimon Oyelaja",
     role: "Operations Lead",
-    photo: "/images/team/aisha.jpg",
+    photo: "/images/coo.png",
     bio: "Coordinates crews, schedules and quality checks to keep every visit on time and on standard.",
   },
   {
