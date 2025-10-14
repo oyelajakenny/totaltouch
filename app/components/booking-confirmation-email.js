@@ -10,6 +10,27 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
+export const metadata = {
+  title: "Book A Service | Total Touch Cleaning & Laundry Services",
+  description:
+    "Total Touch Cleaning & Laundry Services - our mission, values, and the dedicated team providing top-notch cleaning and laundry solutions in Lagos.",
+};
+
+// Optional: Organization schema for SEO
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Total Touch Cleaning & Laundry Services",
+  url: "https://totaltouchcleaning.com.ng",
+  logo: "https://www.totaltouchcleaning.com.ng/_next/image?url=%2FLogo.png&w=128&q=75",
+  sameAs: [
+    "https://www.facebook.com/profile.php?id=61582011002734",
+    "https://www.instagram.com/totaltouch_ng",
+  ],
+  description:
+    "Professional home, office, deep cleaning and laundry pick-up & delivery with eco-friendly products and trusted staff.",
+  areaServed: "Lagos, Nigeria",
+};
 const serviceNames = {
   home: "Home Cleaning",
   regular: "Regular Cleaning",
@@ -35,7 +56,7 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
 
           <Section style={section}>
             <Text style={text}>
-              We’re excited to help. Our team will review your request and reach
+              We've received your booking. Our team will review your request and reach
               out shortly to confirm the schedule and any details.
             </Text>
           </Section>
