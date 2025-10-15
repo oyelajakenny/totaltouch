@@ -269,7 +269,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
-                href="/booking"
+                href="/contact-us"
                 className="rounded-xl bg-white px-5 py-2.5 text-sm font-medium text-[#0A58A2] hover:bg-slate-100"
               >
                 Get a Free Quote
