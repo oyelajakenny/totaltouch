@@ -25,7 +25,7 @@ const HeroSection = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="container mx-auto flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between py-12 px-6 "
+      className="container mx-auto flex my-8 flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between py-12 px-6  "
     >
       <div className="w-full lg:w-1/2 flex flex-col items-center md:items-start justify-center space-y-6 md:space-y-10 md:pr-16 text-center md:text-left">
         <h1 className="font-bold  text-2xl sm:text-4xl md:text-5xl md:text-center lg:text-7xl lg:text-left">
@@ -57,11 +57,11 @@ const HeroSection = () => {
       <div className="w-full lg:w-1/2 flex justify-center mb-6 md:mb-0 rounded-full">
         <Image
           src={"/images/hero.png"}
-          alt="Total Touch Cleaning and Laundry Services"
+          alt="Total Touch Cleaning and Laundry Services | Cleaning and Laundry service in Lagos Nigeria"
           loading="lazy"
           width={600}
           height={400}
-          className=" w-full max-w-md md:max-w-none h-auto object-contain rounded-full"
+          className=" w-full max-w-md md:max-w-none h-auto object-contain"
         />
       </div>
     </motion.div>
