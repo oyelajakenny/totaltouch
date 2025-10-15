@@ -144,7 +144,7 @@ export default function AboutPage() {
       </section>
 
       {/* Experience / Trust Row */}
-      <section className="mt-16 grid items-stretch gap-6 sm:grid-cols-2">
+      {/* <section className="mt-16 grid items-stretch gap-6 sm:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-3">
             <ShieldCheck className="h-6 w-6" />
@@ -193,7 +193,7 @@ export default function AboutPage() {
             <li>• Refill & reuse containers where possible</li>
           </ul>
         </div>
-      </section>
+      </section> */}
 
       {/* Values with Icons */}
       <section className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
