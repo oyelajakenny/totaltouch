@@ -39,7 +39,7 @@ const BookService = () => {
         ))}
       </motion.div>
       <div className="flex justify-center mt-10 lg:hidden px-6">
-        <Link href="/our-services" target="_blank" rel="noopener noreferrer">
+        <Link href="/our-services">
           <button className=" bg-[#0A58A2] px-8 py-4 text-lg font-regular text-white rounded-lg cursor-pointer">
             View All Services
           </button>
