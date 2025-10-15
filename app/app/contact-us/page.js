@@ -156,7 +156,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-slate-700 mb-1"
+                className="block text-sm font-semibold text-slate-700 mb-1"
               >
                 Name
               </label>
@@ -177,7 +177,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-slate-700 mb-1"
+                className="block text-sm font-semibold text-slate-700 mb-1"
               >
                 Email
               </label>
@@ -198,7 +198,7 @@ const Page = () => {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-slate-700 mb-1"
+                className="block text-sm font-semibold text-slate-700 mb-1"
               >
                 Subject
               </label>
@@ -220,17 +220,27 @@ const Page = () => {
             {error.subject && (
               <p className="text-red-500 text-sm">{error.subject}</p>
             )}
-            <textarea
-              placeholder="Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className={`${inputClass} ${error.message ? "border-red-500" : ""} h-32`}
-              disabled={isSubmitting}
-            />
-            {error.message && (
-              <p className="text-red-500 text-sm">{error.message}</p>
-            )}
+            <div>
+              {" "}
+              <label
+                htmlFor="subject"
+                className="block text-sm font-semibold text-slate-700 mb-1"
+              >
+                Message
+              </label>
+              <textarea
+                placeholder="Write a Message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className={`${inputClass} ${error.message ? "border-red-500" : ""} h-32`}
+                disabled={isSubmitting}
+              />
+              {error.message && (
+                <p className="text-red-500 text-sm">{error.message}</p>
+              )}
+            </div>
+
             <button
               type="submit"
               className=" w-full bg-[#0A58A2] text-white p-3 rounded-md  mx-auto disabled:opacity-70 disabled:cursor-not-allowed"
