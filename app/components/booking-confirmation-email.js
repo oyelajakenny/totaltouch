@@ -56,8 +56,9 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
 
           <Section style={section}>
             <Text style={text}>
-              We've received your booking. Our team will review your request and reach
-              out shortly to confirm the schedule and any details.
+              We&apos;ve received your booking. Our team will review your
+              request and reach out shortly to confirm the schedule and any
+              details.
             </Text>
           </Section>
 
@@ -81,8 +82,8 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
 
           <Section style={section}>
             <Text style={text}>
-              If anything looks off, contact us at
-              totaltouchservices@gmail.com. Call or WhatsApp 08125629484
+              If anything looks off, contact us at totaltouchservices@gmail.com.
+              Call or WhatsApp 08125629484
             </Text>
           </Section>
 
@@ -93,10 +94,7 @@ export function BookingConfirmationEmail({ name, email, service, date }) {
             </Text>
             <Text style={footerText}>
               Follow us:{" "}
-              <a
-                href="https://instagram.com/totaltouch_ng"
-                style={linkStyle}
-              >
+              <a href="https://instagram.com/totaltouch_ng" style={linkStyle}>
                 Instagram
               </a>
             </Text>
