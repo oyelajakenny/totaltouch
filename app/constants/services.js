@@ -22,8 +22,8 @@ export const services = [
       "Routine and on-demand housekeeping to keep every room fresh - kitchens, bathrooms, living areas, and bedrooms.",
     features: [
       "Dusting & surfaces",
-      "Kitchen & bath detail",
-      "Floors & windows",
+      "Kitchen & bath",
+      "Floors",
     ],
   },
   {
@@ -47,7 +47,7 @@ export const services = [
     features: [
       "Appliance interiors",
       "Tile & grout focus",
-      "Skirting boards & vents",
+      "Windows Dusting",
     ],
   },
   {
@@ -65,9 +65,9 @@ export const services = [
     blurb:
       "Landlord-ready cleaning for handover days - perfect for tenants, agents, and property managers.",
     features: [
-      "Inside cabinets",
-      "Inside oven & fridge",
-      "Deposit-friendly finish",
+      "Kitchen",
+      "Rooms",
+      "Bathrooms & Toilets",
     ],
   },
   {
@@ -88,7 +88,7 @@ export const services = [
     icon: "Truck",
     blurb:
       "Door-to-door laundry collection and delivery - wash, dry, fold, and pressing options.",
-    features: ["Same-day options", "Neat fold & pack", "SMS updates"],
+    features: ["Same-day options", "Neat fold & pack", "Delivery"],
   },
 ];
 
