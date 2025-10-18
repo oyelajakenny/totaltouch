@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { ShieldCheck, Leaf, Users2, ThumbsUp, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 
 export const metadata = {
@@ -50,7 +51,7 @@ const values = [
     title: "Customer-First Service",
     text: "Clear communication, transparent pricing, and a 100% satisfaction promise on every job.",
   },
-];
+]
 
 const team = [
   {
@@ -91,15 +92,14 @@ export default function AboutPage() {
           About Total Touch Cleaning & Laundry Services
         </h1>
         <p className="mx-auto mt-3 max-w-3xl text-slate-600">
-          Welcome to Total Touch Cleaning & Laundry Services, a trusted cleaning
-          and laundry company in Lagos, Nigeria, offering professional,
-          affordable, and eco-friendly cleaning solutions for homes, offices,
-          and commercial spaces. We provide home cleaning, office cleaning, deep
+          Your trusted cleaning and laundry company in Lagos, Nigeria, offering
+          professional, affordable, cleaning solutions for homes, and commercial spaces.
+          {/* and commercial spaces. We provide home cleaning, office cleaning, deep
           cleaning, post-construction cleaning, fumigation, and laundry pickup
           services in Lagos, helping clients enjoy a cleaner, healthier
-          environment without stress.
+          environment without stress. */}
         </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/booking"
             className="rounded-xl bg-[#0A58A2] px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
@@ -113,13 +113,62 @@ export default function AboutPage() {
           >
             Contact Us
           </Link>
+        </div> */}
+      </section>
+      <section className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <p className="mt-3 text-[1rem] text-slate-600">
+            Total Touch Cleaning & Laundry Services, we are a trusted cleaning
+            and laundry company in Lagos, Nigeria, offering professional,
+            affordable, and eco-friendly cleaning solutions for homes, offices,
+            and commercial spaces. We provide home cleaning, office cleaning,
+            deep cleaning, post-construction cleaning, fumigation, and laundry
+             services in Lagos, helping clients enjoy a cleaner, healthier
+            environment without stress. 
+            
+            {/* We specialize in delivering professional
+            cleaning, laundry, and fumigation solutions designed to make your
+            space shine safely, efficiently, and affordably. */}
+          </p>
+        
+          <div className="rounded-2xl border border-slate-200 bg-white p-2  my-2">
+            <h2 className="text-lg font-semibold text-slate-900 text-center">
+              Our Mission
+            </h2>
+            <p className="mt-2 text-sm text-slate-600 text-center">
+              To redefine cleanliness in Nigeria by providing reliable and
+              affordable cleaning and laundry services that make homes and
+              businesses shine — while saving our clients time and effort.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-2 ">
+            <h2 className="text-lg font-semibold text-slate-900 text-center">
+              Our Vision
+            </h2>
+            <p className="mt-2 text-sm text-slate-600 text-center">
+              To become the leading cleaning company in Lagos and across
+              Nigeria, recognized for excellence, innovation, and customer
+              satisfaction.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <Image
+            src={"/images/Cleaning service in lagos nigeria.jpg"}
+            alt="Cleaning service in Lagos Nigeria"
+            width={1000}
+            height={700}
+            loading="lazy"
+          />
         </div>
       </section>
-
       {/* Mission / Vision / Values */}
-      <section className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+      {/* <section className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-semibold text-slate-900 text-center">Our Mission</h2>
+          <h2 className="text-lg font-semibold text-slate-900 text-center">
+            Our Mission
+          </h2>
           <p className="mt-2 text-sm text-slate-600 text-center">
             To redefine cleanliness in Nigeria by providing reliable and
             affordable cleaning and laundry services that make homes and
@@ -127,21 +176,23 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-lg font-semibold text-slate-900 text-center">Our Vision</h2>
+          <h2 className="text-lg font-semibold text-slate-900 text-center">
+            Our Vision
+          </h2>
           <p className="mt-2 text-sm text-slate-600 text-center">
             To become the leading cleaning company in Lagos and across Nigeria,
             recognized for excellence, innovation, and customer satisfaction.
           </p>
         </div>
-        {/* <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-900">Our Values</h2>
           <ul className="mt-2 space-y-2 text-sm text-slate-700">
             <li>• Integrity — we do what we say.</li>
             <li>• Reliability — we show up and deliver.</li>
             <li>• Respect — for your time, space, and belongings.</li>
           </ul>
-        </div> */}
-      </section>
+        </div>
+      </section> */}
 
       {/* Experience / Trust Row */}
       {/* <section className="mt-16 grid items-stretch gap-6 sm:grid-cols-2">
