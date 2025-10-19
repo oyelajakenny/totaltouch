@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-email/components": "0.5.3",
     "@react-email/render": "1.2.3",
+    "axios": "^1.12.2",
     "framer-motion": "^12.23.12",
     "googleapis": "^160.0.0",
     "lucide-react": "^0.536.0",
