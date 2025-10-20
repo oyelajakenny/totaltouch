@@ -53,7 +53,7 @@ export async function POST(req) {
 
     const values = [
       [
-        new Date().toISOString(), // Timestamp
+        new Date(), // Timestamp
         name,
         email,
         phone || "",
