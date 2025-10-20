@@ -1,8 +1,10 @@
+export const runtime = "nodejs";
+
 import { EmailTemplate } from "@/components/email-template";
 import { BookingConfirmationEmail } from "@/components/booking-confirmation-email";
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
+import { sendSMS, formatBookingSMS } from "@/app/utils/sms";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendEmail(formData) {
@@ -34,6 +36,22 @@ async function sendEmail(formData) {
     if (adminError) {
       console.error("Error sending admin email:", adminError);
       return NextResponse.json({ error: adminError.message }, { status: 500 });
+    }
+
+    // 2) Send SMS to client
+    if (process.env.ADMIN_PHONE_NUMBER) {
+      const smsMessage = formatBookingSMS(formData);
+      const smsResult = await sendSMS(
+        process.env.ADMIN_PHONE_NUMBER,
+        smsMessage
+      );
+
+      if (!smsResult.success) {
+        console.error("Error sending SMS notification:", smsResult.error);
+        // Don't fail the whole request if SMS fails
+      } else {
+        console.log("SMS notification sent successfully");
+      }
     }
 
     // 2) Send confirmation to client
