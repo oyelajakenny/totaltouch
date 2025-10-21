@@ -17,10 +17,10 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "Total Touch Cleaning & Laundry Services",
   url: "https://totaltouchcleaning.com.ng",
-  logo: "https://example.com/logo.png",
+  logo: "https://www.totaltouchcleaning.com.ng/_next/image?url=%2FLogo.png&w=128&q=75",
   sameAs: [
-    "https://www.facebook.com/yourpage",
-    "https://www.instagram.com/yourpage",
+    "https://www.facebook.com/profile.php?id=61582011002734",
+    "https://www.instagram.com/totaltouch_ng",
     
   ],
   description:
