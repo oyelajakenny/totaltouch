@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
 import { contact } from "../../constants";
 import CTA from "../../components/CTA";
@@ -7,6 +7,7 @@ import { FiPhone } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ICONS = {
   FiPhone,
@@ -28,6 +29,8 @@ const Page = () => {
   const [formData, setFormData] = useState(createInitialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState({});
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
 
   const validate = () => {
     const newErrors = {};
@@ -73,6 +76,11 @@ const Page = () => {
       return;
     }
 
+    if (!recaptchaToken) {
+      toast.error("Please complete the reCAPTCHA verification");
+      return;
+    }
+
     try {
       setIsSubmitting(true);
       const payload = {
@@ -80,6 +88,7 @@ const Page = () => {
         email: formData.email.trim(),
         subject: formData.subject.trim(),
         message: formData.message.trim(),
+        recaptchaToken,
       };
 
       const response = await fetch("/api/contact", {
@@ -108,6 +117,10 @@ const Page = () => {
       });
       setFormData(createInitialFormState());
       setError({});
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+      setRecaptchaToken(null);
     } catch (err) {
       toast.error(err.message || "Something went wrong. Please try again.");
     } finally {
@@ -239,6 +252,15 @@ const Page = () => {
               {error.message && (
                 <p className="text-red-500 text-sm">{error.message}</p>
               )}
+            </div>
+
+            <div className="flex justify-center">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={(token) => setRecaptchaToken(token)}
+                theme="light"
+              />
             </div>
 
             <button
