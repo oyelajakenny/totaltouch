@@ -8,7 +8,7 @@ import Image from "next/image";
 export const metadata = {
   title: "About Us | Total Touch Cleaning & Laundry Services",
   description:
-    "Total Touch Cleaning & Laundry Services - our mission, values, and the dedicated team providing top-notch cleaning and laundry solutions in Lagos.",
+    "Total Touch Cleaning & Laundry Services - our mission, values, and the dedicated team providing top-notch cleaning and laundry solutions in Lagos, Nigeria.",
 };
 
 // Optional: Organization schema for SEO
@@ -24,7 +24,7 @@ const orgJsonLd = {
     
   ],
   description:
-    "Professional home, office, deep cleaning and laundry pick-up & delivery with eco-friendly products and trusted staff.",
+    "Professional home, office, deep cleaning and laundry pick-up & delivery with eco-friendly products and trusted staff in Lagos, Nigeria.",
   areaServed: "Lagos, Nigeria",
 };
 
