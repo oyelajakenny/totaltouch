@@ -8,10 +8,26 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 async function verifyRecaptcha(token) {
   try {
     const secret = process.env.RECAPTCHA_SECRET_KEY;
-    if (!secret) return false;
+    console.log(
+      "reCAPTCHA verification (contact) - Secret key exists:",
+      !!secret
+    );
+    console.log("reCAPTCHA verification (contact) - Token received:", !!token);
+
+    if (!secret) {
+      console.log("reCAPTCHA verification (contact) - No secret key found");
+      return false;
+    }
+
+    if (!token) {
+      console.log("reCAPTCHA verification (contact) - No token provided");
+      return false;
+    }
+
     const params = new URLSearchParams();
     params.append("secret", secret);
     params.append("response", token);
+
     const response = await fetch(
       "https://www.google.com/recaptcha/api/siteverify",
       {
@@ -20,9 +36,12 @@ async function verifyRecaptcha(token) {
         body: params,
       }
     );
+
     const data = await response.json();
+    console.log("reCAPTCHA verification (contact) response:", data);
     return Boolean(data?.success);
-  } catch {
+  } catch (error) {
+    console.log("reCAPTCHA verification (contact) error:", error);
     return false;
   }
 }
