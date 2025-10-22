@@ -4,10 +4,49 @@ import { google } from "googleapis";
 
 export const runtime = "nodejs"; // important: googleapis needs Node runtime (not Edge)
 
+async function verifyRecaptcha(token) {
+  try {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secret) return false;
+    const params = new URLSearchParams();
+    params.append("secret", secret);
+    params.append("response", token);
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params,
+      }
+    );
+    const data = await response.json();
+    return Boolean(data?.success);
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, email, phone, date, service, address, notes } = body;
+    const {
+      name,
+      email,
+      phone,
+      date,
+      service,
+      address,
+      notes,
+      recaptchaToken,
+    } = body;
+
+    const tokenOk = await verifyRecaptcha(recaptchaToken);
+    if (!tokenOk) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
 
     const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY ?? "";
     const clientEmail = process.env.GOOGLE_CLIENT_EMAIL ?? "";
@@ -61,7 +100,6 @@ export async function POST(req) {
         service || "",
         address || "",
         notes || "",
-
       ],
     ];
 
@@ -98,4 +136,3 @@ export async function POST(req) {
     );
   }
 }
-
