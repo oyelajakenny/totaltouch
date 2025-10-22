@@ -5,6 +5,28 @@ import { ContactForm } from "@/components/ContactFormEmail";
 const resend = new Resend(process.env.RESEND_API_KEY);
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+async function verifyRecaptcha(token) {
+  try {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secret) return false;
+    const params = new URLSearchParams();
+    params.append("secret", secret);
+    params.append("response", token);
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params,
+      }
+    );
+    const data = await response.json();
+    return Boolean(data?.success);
+  } catch {
+    return false;
+  }
+}
+
 function validateFormData(formData) {
   if (!formData || typeof formData !== "object") {
     return {
@@ -24,7 +46,8 @@ function validateFormData(formData) {
 
   if (!trimmed.name) errors.name = "Name is required";
   if (!trimmed.email) errors.email = "Email is required";
-  else if (!emailRegex.test(trimmed.email)) errors.email = "Enter a valid email";
+  else if (!emailRegex.test(trimmed.email))
+    errors.email = "Enter a valid email";
   if (!trimmed.subject) errors.subject = "Subject is required";
   if (!trimmed.message) errors.message = "Message is required";
 
@@ -72,10 +95,20 @@ async function sendEmail(formData) {
 export async function POST(request) {
   try {
     const body = await request.json();
+    const tokenOk = await verifyRecaptcha(body?.recaptchaToken);
+    if (!tokenOk) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
     const { errors, data } = validateFormData(body);
 
     if (Object.keys(errors).length > 0) {
-      return NextResponse.json({ error: "Validation failed", details: errors }, { status: 400 });
+      return NextResponse.json(
+        { error: "Validation failed", details: errors },
+        { status: 400 }
+      );
     }
 
     return sendEmail(data);
