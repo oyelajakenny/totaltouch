@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { RiCalendarScheduleLine } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import toast from "react-hot-toast";
 import { ScaleLoader } from "react-spinners";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const SERVICE_DETAIL_CONFIG = {
   "Home Cleaning": {
@@ -121,6 +122,8 @@ const BookingForm = () => {
   const [formData, setFormData] = useState(createInitialFormState);
   const [error, setError] = useState({});
   const [isBooking, setIsBooking] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
   const selectedServiceDetail = SERVICE_DETAIL_CONFIG[formData.serviceType];
   const selectedServiceDetailValue = selectedServiceDetail
     ? formData.serviceDetails?.[selectedServiceDetail.name] || ""
@@ -221,9 +224,18 @@ const BookingForm = () => {
     });
   };
 
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) {
+      return;
+    }
+
+    if (!recaptchaToken) {
+      toast.error("Please complete the reCAPTCHA verification");
       return;
     }
 
@@ -267,6 +279,7 @@ const BookingForm = () => {
           service: formData.serviceType,
           date: `${formData.preferredDate} ${formData.preferredTime}`,
           message: composedMessage,
+          recaptchaToken,
         }),
       });
 
@@ -285,6 +298,7 @@ const BookingForm = () => {
           serviceDetail: formattedDetail,
           address: trimmedAddress,
           notes: trimmedInstructions || "None",
+          recaptchaToken,
         };
         const bookingRes = await fetch("/api/booking", {
           method: "POST",
@@ -315,6 +329,10 @@ const BookingForm = () => {
           },
         }
       );
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+      setRecaptchaToken(null);
     } catch (err) {
       toast.error(
         err.message || "Failed to submit booking. Please try again😓."
@@ -589,6 +607,14 @@ const BookingForm = () => {
                 Service available in Lagos only at the moment
               </p>
             </div>
+          </div>
+          <div className="flex justify-start">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              onChange={handleRecaptchaChange}
+              theme="light"
+            />
           </div>
           <div>
             <button
