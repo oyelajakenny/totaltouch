@@ -7,6 +7,28 @@ import { NextResponse } from "next/server";
 import { sendSMS, formatBookingSMS } from "@/app/utils/sms";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+async function verifyRecaptcha(token) {
+  try {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secret) return false;
+    const params = new URLSearchParams();
+    params.append("secret", secret);
+    params.append("response", token);
+    const response = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params,
+      }
+    );
+    const data = await response.json();
+    return Boolean(data?.success);
+  } catch {
+    return false;
+  }
+}
+
 async function sendEmail(formData) {
   if (!process.env.RESEND_API_KEY) {
     return NextResponse.json(
@@ -98,6 +120,14 @@ async function sendEmail(formData) {
 export async function POST(request) {
   try {
     const formData = await request.json();
+    const token = formData?.recaptchaToken;
+    const ok = await verifyRecaptcha(token);
+    if (!ok) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
     return sendEmail(formData);
   } catch (error) {
     console.error("Error processing request:", error);
