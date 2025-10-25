@@ -100,46 +100,46 @@ export const company = [
 export const service = [
   {
     name: "Home Cleaning",
-    path: "/home-cleaning",
+    path: "/our-services",
   },
   {
     name: "Office Cleaning",
-    path: "/office-cleaning",
+    path: "/our-services",
   },
   {
     name: "Deep Cleaning",
-    path: "/deep-cleaning",
+    path: "/our-services",
   },
   {
     name: "Laundry Services",
-    path: "/laundry-services",
+    path: "/our-services",
   },
   {
     name: "Dry Cleaning",
-    path: "/dry-cleaning",
+    path: "/our-services",
   },
   {
     name: "Fumigation Service",
-    path: "/fumigation",
+    path: "/our-services",
   },
   {
     name: "Post-Construction Cleaning",
-    path: "/post-construction-cleaning",
+    path: "/our-services",
   },
 ];
 
 export const support = [
   {
     name: "Contact Us",
-    path: "/contact",
+    path: "/contact-us",
   },
   {
     name: "Support",
-    path: "/support",
+    path: "/contact-us",
   },
   {
     name: "Feedback",
-    path: "/feedback",
+    path: "/contact-us",
   },
   {
     name: "Refund Policy",
