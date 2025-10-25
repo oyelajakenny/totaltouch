@@ -265,7 +265,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="mt-16">
+      {/* <section className="mt-16">
         <div className="text-center">
           <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium tracking-wide text-slate-700">
             Our Team
@@ -285,9 +285,11 @@ export default function AboutPage() {
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
-                {/* Replace with next/image if available */}
-                <img
+                  <Image
                   src={t.photo}
+                  width={1000}
+                  height={1000}
+                  loading="lazy"
                   alt={`${t.name} — ${t.role}`}
                   className="h-full w-full object-cover"
                 />
@@ -300,7 +302,7 @@ export default function AboutPage() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA Banner */}
       <section
