@@ -62,7 +62,7 @@ export const services = [
 export const about = [
   {
     name: "About Us",
-    path: "/about",
+    path: "/about-us",
   },
   {
     name: "Career",
@@ -77,7 +77,7 @@ export const about = [
 export const company = [
   {
     name: "Why Us",
-    path: "/about",
+    path: "/about-us",
   },
   {
     name: "Partner With Us",
