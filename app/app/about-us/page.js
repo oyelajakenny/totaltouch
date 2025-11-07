@@ -8,7 +8,24 @@ import Image from "next/image";
 export const metadata = {
   title: "About Us | Total Touch Cleaning & Laundry Services",
   description:
-    "Total Touch Cleaning & Laundry Services - our mission, values, and the dedicated team providing top-notch cleaning and laundry solutions in Lagos, Nigeria.",
+    "Learn about Total Touch, Lagos' trusted cleaning and laundry company. Professional, affordable services for homes and businesses in Ikorodu and across Lagos State.",
+  keywords: [
+    "about total touch Cleaning & Laundry Services",
+    "cleaning company lagos",
+    "laundry service lagos",
+    "laundry service ikorodu",
+    "cleaning service ikorodu",
+    "fumigation service ikorodu",
+
+  ],
+  openGraph: {
+    title: "About Total Touch Cleaning & Laundry Services",
+    description: "Your trusted cleaning and laundry company in Lagos, Nigeria.",
+    images: [{ url: "/images/about-hero.jpg", width: 1200, height: 630 }],
+  },
+  alternates: {
+    canonical: "https://www.totaltouchcleaning.com.ng/about-us",
+  },
 };
 
 // Optional: Organization schema for SEO

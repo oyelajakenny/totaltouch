@@ -15,7 +15,7 @@ const CustomerExperience = () => {
       <div className=" rounded-lg h-full w-full overflow-hidden">
         <Image
           src={"/images/experience.png"}
-          alt="Customer Experience"
+          alt="Satisfied customer reviewing Total Touch cleaning services"
           width={800}
           height={400}
           loading="lazy"
@@ -24,12 +24,12 @@ const CustomerExperience = () => {
       </div>
       <div className="text-center my-10 lg:p-20 flex flex-col justify-start items-start ">
         <div className="flex flex-col justify-start items-start space-y-2  ">
-          <h4 className="text-left font-semibold text-[#0A58A2] text-2xl">
+          <h2 className="text-left font-semibold text-[#0A58A2] text-2xl">
             CUSTOMER EXPERIENCE
-          </h4>
-          <h2 className="text-5xl font-bold text-black mb-4 text-left leading-15">
-            What Our Customers Are Saying
           </h2>
+          <h3 className="text-5xl font-bold text-black mb-4 text-left leading-15">
+            What Our Customers Are Saying
+          </h3>
         </div>
 
         <div className="flex flex-col justify-start items-start space-y-2  ">

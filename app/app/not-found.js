@@ -8,7 +8,7 @@ const Notfound = () => {
       <div>
         <Image
           src="/images/cleaner.png"
-          alt="notfound"
+          alt="404 Error - Page Not Found"
           width={200}
           height={200}
           className="mx-auto mt-20"

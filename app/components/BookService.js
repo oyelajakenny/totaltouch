@@ -19,7 +19,7 @@ const BookService = () => {
           </h3>
         </div>
         <div className="hidden lg:flex">
-          <Link href="/our-services" target="_blank" rel="noopener noreferrer">
+          <Link href="/our-services" target="_blank">
             <button className=" bg-[#0A58A2] px-8 py-3 text-lg font-semibold text-white rounded-lg cursor-pointer">
               View All Services
             </button>

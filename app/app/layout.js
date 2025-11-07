@@ -8,10 +8,9 @@ import Script from "next/script";
 
 export const metadata = {
   title: {
-    default:
-      "Total Touch Cleaning & Laundry Services | Professional Cleaning & Laundry in Lagos, Nigeria",
+    default: "Total Touch Cleaning & Laundry Services | Lagos, Nigeria",
     template:
-      "%s | Total Touch Cleaning & Laundry Services | Professional Cleaning & Laundry in Lagos",
+      "%s | Total Touch Cleaning & Laundry Services | Lagos, Nigeria",
   },
   description:
     "Cleaning and laundry company in Lagos, Nigeria. Designed for busy people like you. From one-time deep cleaning to recurring laundry pickups, we make life easier and cleaner.",
@@ -31,7 +30,6 @@ export const metadata = {
     "Post-construction cleaning Nigeria",
     "Same-day laundry service Nigeria",
     "Dry cleaning pickup Lagos, Nigeria",
-    "Deep cleaning services Lagos, Nigeria",
     "Cleaning and laundry services Ikorodu Lagos, Nigeria",
     "Home cleaning services Ikorodu Lagos Nigeria",
     "Cleaning services Ikorodu Lagos, Nigeria",
@@ -49,8 +47,6 @@ export const metadata = {
     "Post-construction Ikorodu Lagos cleaning Nigeria",
     "Same-day laundry Ikorodu, Lagos service Nigeria",
     "Dry cleaning pickup Ikorodu Lagos, Nigeria",
-    "Deep cleaning services Ikorodu Lagos, Nigeria",
-    "Cleaning and laundry services Ikorodu Lagos, Nigeria",
     "Home cleaning services Ikorodu Lagos, Nigeria",
   ],
   authors: [{ name: "Total Touch Cleaning and Laundry Services" }],
@@ -97,6 +93,11 @@ export const metadata = {
     "msapplication-TileColor": "#0A58A2",
   },
 };
+ export const viewport = {
+   width: "device-width",
+   initialScale: 1,
+   maximumScale: 5,
+ };
 
 export default function RootLayout({ children }) {
   return (

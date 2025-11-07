@@ -14,10 +14,13 @@ export const BookServiceCard = ({book, id}) => {
       className="relative w-full  border-gray-300 rounded-lg flex flex-col justify-between m-2"
     >
       <div className="w-full  overflow-hidden rounded-lg">
-        <img
+        <Image
           src={book.img}
-          alt={book.title}
+          alt={`${book.title} - Total Touch Cleaning Services`}
+          width={400}
+          height={300}
           className="w-full h-auto object-cover"
+          loading="lazy"
         />
       </div>
       <div className="absolute bottom-7 md:bottom-10 flex flex-col gap-2 pl-5 rounded-lg  w-11/12 ">
