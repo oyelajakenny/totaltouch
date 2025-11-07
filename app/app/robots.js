@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 /** @returns {MetadataRoute.Robots} */
 export default function robots() {
@@ -7,7 +7,7 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/_next/", "/private/,"],
+        disallow: ["/api/", "/admin/", "/_next/", "/private/"],
       },
       {
         userAgent: "Googlebot",
@@ -15,7 +15,7 @@ export default function robots() {
         disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: "https://www.totaltouchcleaning.com.ng//sitemap.xml",
+    sitemap: "https://www.totaltouchcleaning.com.ng/sitemap.xml",
     host: "https://www.totaltouchcleaning.com.ng",
   };
 }
