@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import toast from "react-hot-toast";
 import { contact } from "../../constants";
 import CTA from "../../components/CTA";
