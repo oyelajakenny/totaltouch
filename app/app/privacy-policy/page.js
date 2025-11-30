@@ -24,13 +24,13 @@ export default function Page() {
       <section className="space-y-4 text-slate-800">
         <h2 className="text-xl font-semibold">1. Introduction</h2>
         <p>
-          Welcome to Total Touch Cleaning and Laundry Services ("we," "us,"
-          "our"). We are a professional cleaning and laundry service operating
-          in Lagos, Nigeria. We are committed to protecting the privacy and
-          security of your personal information ("Personal Data"). This Privacy
-          Policy explains how we collect, use, share, and protect your Personal
-          Data when you use our services, visit our website, or interact with
-          us.
+          Welcome to Total Touch Cleaning and Laundry Services (&quot;we,&quot;
+          &quot;us,&quot; &quot;our&quot;). We are a professional cleaning and
+          laundry service operating in Lagos, Nigeria. We are committed to
+          protecting the privacy and security of your personal information
+          (&quot;Personal Data&quot;). This Privacy Policy explains how we
+          collect, use, share, and protect your Personal Data when you use our
+          services, visit our website, or interact with us.
         </p>
         <p>
           We process your data in accordance with the Nigeria Data Protection
