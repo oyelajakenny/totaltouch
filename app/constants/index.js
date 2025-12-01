@@ -1,9 +1,7 @@
-import {FaHome} from "react-icons/fa";
-import {RiHomeOfficeFill} from "react-icons/ri";
-import {MdLocalLaundryService} from "react-icons/md";
-import {LuConstruction} from "react-icons/lu";
-
-
+import { FaHome } from "react-icons/fa";
+import { RiHomeOfficeFill } from "react-icons/ri";
+import { MdLocalLaundryService } from "react-icons/md";
+import { LuConstruction } from "react-icons/lu";
 
 export const home = [
   {
@@ -35,25 +33,25 @@ export const home = [
 export const services = [
   {
     id: 1,
-    img: "images/home-cleaning.png",
+    img: "/images/home-cleaning.png",
     title: "Cleaning Services",
     url: "/booking",
   },
   {
     id: 2,
-    img: "images/office-cleaning.png",
+    img: "/images/office-cleaning.png",
     title: "Fumigation Services",
     url: "/booking",
   },
   {
     id: 3,
-    img: "images/laundry-service.png",
+    img: "/images/laundry-service.png",
     title: "Laundry Services",
     url: "/booking",
   },
   {
     id: 4,
-    img: "images/post-construction.png",
+    img: "/images/post-construction.png",
     title: "Post-Construction Cleaning",
     url: "/booking",
   },
@@ -85,7 +83,7 @@ export const company = [
   },
   {
     name: "Privacy Policy",
-    path: "/terms",
+    path: "/privacy-policy",
   },
   {
     name: "FAQ",
