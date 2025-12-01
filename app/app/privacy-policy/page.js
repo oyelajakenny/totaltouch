@@ -7,8 +7,7 @@ export const metadata = {
   },
 };
 
-const LastUpdated = "[Date]"; // Replace with actual last-updated date, e.g. "2025-11-13"
-
+const LastUpdated = new Date().toLocaleDateString(); 
 export default function Page() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
