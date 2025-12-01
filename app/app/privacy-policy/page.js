@@ -240,26 +240,8 @@ export default function Page() {
         <h2 className="text-xl font-semibold mt-6">9. Contact Us</h2>
         <p>
           If you have any questions about this Privacy Policy or how we handle
-          your Personal Data, please contact us:
-        </p>
-        <address className="not-italic">
-          <strong>Total Touch Cleaning and Laundry Services</strong>
-          <br />
-          [Your Business Address, Lagos, Nigeria]
-          <br />
-          Phone: [Your Business Phone Number]
-          <br />
-          Email:{" "}
-          <a
-            href="mailto:[Your Business Email Address]"
-            className="text-sky-600"
-          >
-            [Your Business Email Address]
-          </a>
-        </address>
-
-        <p className="mt-6 text-sm text-slate-600">
-          This policy is effective as of the date shown above.
+          your Personal Data, please contact us:{" "}
+          <strong>totaltouchcleaning@gmail.com</strong>
         </p>
       </section>
     </main>
