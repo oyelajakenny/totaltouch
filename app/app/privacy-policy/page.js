@@ -240,7 +240,7 @@ export default function Page() {
         <p>
           If you have any questions about this Privacy Policy or how we handle
           your Personal Data, please contact us:{" "}
-          <strong>totaltouchcleaning@gmail.com</strong>
+          <strong>totaltouchservices@gmail.com</strong>
         </p>
       </section>
     </main>
