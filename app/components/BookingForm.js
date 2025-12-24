@@ -100,6 +100,19 @@ const SERVICE_DETAIL_CONFIG = {
       { value: "Post-renovation", label: "Post-renovation" },
     ],
   },
+  "Upholstery Cleaning": {
+    name: "upholsteryCleaningFocus",
+    label: "Focus area",
+    placeholder: "Select focus area",
+    type: "select",
+    required: true,
+    options: [
+      { value: "Sofas", label: "Sofas" },
+      { value: "Chairs", label: "Chairs" },
+      { value: "Cushions", label: "Cushions" },
+      { value: "Others", label: "Others" },
+    ],
+  },
 };
 
 const SERVICE_DETAIL_KEYS = Object.values(SERVICE_DETAIL_CONFIG).map(
