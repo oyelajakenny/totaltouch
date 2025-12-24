@@ -90,6 +90,14 @@ export const services = [
       "Door-to-door laundry collection and delivery - wash, dry, fold, and pressing options.",
     features: ["Same-day options", "Neat fold & pack", "Delivery"],
   },
+   {
+    id: "upholstery-cleaning",
+    title: "Upholstery Cleaning",
+    icon: "Upholstery",
+    blurb:
+      "Professional upholstery cleaning for sofas, chairs, and other furniture to maintain comfort and hygiene.",
+    features: ["Deep cleaning", "Stain removal", "Odour elimination"],
+  },
 ];
 
 export default services;
