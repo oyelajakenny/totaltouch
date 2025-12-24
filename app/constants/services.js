@@ -93,7 +93,7 @@ export const services = [
    {
     id: "upholstery-cleaning",
     title: "Upholstery Cleaning",
-    icon: "Upholstery",
+    icon: "Armchair",
     blurb:
       "Professional upholstery cleaning for sofas, chairs, and other furniture to maintain comfort and hygiene.",
     features: ["Deep cleaning", "Stain removal", "Odour elimination"],

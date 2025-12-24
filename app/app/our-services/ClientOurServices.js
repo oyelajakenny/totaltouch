@@ -10,7 +10,7 @@ import {
   Hammer,
   Truck,
   Check,
-  Upholstery,
+  Armchair,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { services } from "../../constants/services";
@@ -61,7 +61,7 @@ function ServiceCard({ service }) {
     MoveRight,
     Hammer,
     Truck,
-    Upholstery,
+    Armchair,
   };
   const Icon = ICONS[service.icon] || Check;
 
