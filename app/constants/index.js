@@ -124,6 +124,10 @@ export const service = [
     name: "Post-Construction Cleaning",
     path: "/our-services",
   },
+  {
+    name: "Upholstery Cleaning",
+    path: "/our-services",
+  },
 ];
 
 export const support = [
