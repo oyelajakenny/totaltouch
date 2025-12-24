@@ -461,6 +461,7 @@ const BookingForm = () => {
                 <option value="Laundry Pick Up">Laundry Pick Up</option>
                 <option value="Fumigation Service">Fumigation Service</option>
                 <option value="Deep Cleaning">Deep Cleaning</option>
+                <option value="Upholstery Cleaning">Upholstery Cleaning</option>
               </select>
               {error.serviceType && (
                 <p className="text-red-500 text-sm mt-1">{error.serviceType}</p>
